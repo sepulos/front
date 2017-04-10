@@ -1,0 +1,17 @@
+D:\Uczelnia\aplikacja\BilleCar\BilleCar.ConsoleUI\bin\Debug\BilleCar.ConsoleUI.exe.config
+D:\Uczelnia\aplikacja\BilleCar\BilleCar.ConsoleUI\bin\Debug\BilleCar.ConsoleUI.exe
+D:\Uczelnia\aplikacja\BilleCar\BilleCar.ConsoleUI\bin\Debug\BilleCar.ConsoleUI.pdb
+D:\Uczelnia\aplikacja\BilleCar\BilleCar.ConsoleUI\bin\Debug\BilleCar.BOL.dll
+D:\Uczelnia\aplikacja\BilleCar\BilleCar.ConsoleUI\bin\Debug\BilleCar.DAL.dll
+D:\Uczelnia\aplikacja\BilleCar\BilleCar.ConsoleUI\bin\Debug\EntityFramework.dll
+D:\Uczelnia\aplikacja\BilleCar\BilleCar.ConsoleUI\bin\Debug\EntityFramework.SqlServer.dll
+D:\Uczelnia\aplikacja\BilleCar\BilleCar.ConsoleUI\bin\Debug\BilleCar.BOL.pdb
+D:\Uczelnia\aplikacja\BilleCar\BilleCar.ConsoleUI\bin\Debug\BilleCar.DAL.pdb
+D:\Uczelnia\aplikacja\BilleCar\BilleCar.ConsoleUI\bin\Debug\BilleCar.DAL.dll.config
+D:\Uczelnia\aplikacja\BilleCar\BilleCar.ConsoleUI\bin\Debug\EntityFramework.xml
+D:\Uczelnia\aplikacja\BilleCar\BilleCar.ConsoleUI\bin\Debug\EntityFramework.SqlServer.xml
+D:\Uczelnia\aplikacja\BilleCar\BilleCar.ConsoleUI\obj\Debug\BilleCar.ConsoleUI.csprojResolveAssemblyReference.cache
+D:\Uczelnia\aplikacja\BilleCar\BilleCar.ConsoleUI\obj\Debug\BilleCar.ConsoleUI.exe
+D:\Uczelnia\aplikacja\BilleCar\BilleCar.ConsoleUI\obj\Debug\BilleCar.ConsoleUI.pdb
+D:\Uczelnia\aplikacja\BilleCar\BilleCar.ConsoleUI\bin\Debug\BilleCar.BLL.dll
+D:\Uczelnia\aplikacja\BilleCar\BilleCar.ConsoleUI\bin\Debug\BilleCar.BLL.pdb

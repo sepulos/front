@@ -1,0 +1,14 @@
+D:\Uczelnia\aplikacja\BilleCar\BilleCar.DAL\bin\Debug\BilleCar.DAL.dll.config
+D:\Uczelnia\aplikacja\BilleCar\BilleCar.DAL\bin\Debug\BilleCar.DAL.dll
+D:\Uczelnia\aplikacja\BilleCar\BilleCar.DAL\bin\Debug\BilleCar.DAL.pdb
+D:\Uczelnia\aplikacja\BilleCar\BilleCar.DAL\bin\Debug\BilleCar.BOL.dll
+D:\Uczelnia\aplikacja\BilleCar\BilleCar.DAL\bin\Debug\EntityFramework.dll
+D:\Uczelnia\aplikacja\BilleCar\BilleCar.DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Uczelnia\aplikacja\BilleCar\BilleCar.DAL\bin\Debug\BilleCar.BOL.pdb
+D:\Uczelnia\aplikacja\BilleCar\BilleCar.DAL\bin\Debug\EntityFramework.xml
+D:\Uczelnia\aplikacja\BilleCar\BilleCar.DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\Uczelnia\aplikacja\BilleCar\BilleCar.DAL\obj\Debug\BilleCar.DAL.csprojResolveAssemblyReference.cache
+D:\Uczelnia\aplikacja\BilleCar\BilleCar.DAL\obj\Debug\BilleCar.DAL.dll
+D:\Uczelnia\aplikacja\BilleCar\BilleCar.DAL\obj\Debug\BilleCar.DAL.pdb
+D:\Uczelnia\aplikacja\BilleCar\BilleCar.DAL\obj\Debug\BilleCar.DAL.Migrations.InitialCreate.resources
+D:\Uczelnia\aplikacja\BilleCar\BilleCar.DAL\obj\Debug\BilleCar.DAL.csproj.GenerateResource.Cache

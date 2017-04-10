@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.4
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BilleCar.BOL", "BilleCar.BOL\BilleCar.BOL.csproj", "{0150A23C-E40E-450E-B9EE-D63189B779DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BilleCar.DAL", "BilleCar.DAL\BilleCar.DAL.csproj", "{7766EA32-CAF7-41C5-8961-96E907C7E1D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BilleCar.ConsoleUI", "BilleCar.ConsoleUI\BilleCar.ConsoleUI.csproj", "{7C2A0C5D-8869-41A8-A1B4-F2880F80895E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BilleCar.BLL", "BilleCar.BLL\BilleCar.BLL.csproj", "{EAD3A664-4BE6-4AFE-857A-FA206BED07FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BilleCar.API", "BilleCar.API\BilleCar.API.csproj", "{7FF3065C-9135-4A54-B356-E5D8CBB8CDAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BilleCar.AngularJSUI", "BilleCar.AngularJSUI\BilleCar.AngularJSUI.csproj", "{2B2689C1-8867-45FE-9F9F-7E7DF8164229}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0150A23C-E40E-450E-B9EE-D63189B779DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0150A23C-E40E-450E-B9EE-D63189B779DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0150A23C-E40E-450E-B9EE-D63189B779DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0150A23C-E40E-450E-B9EE-D63189B779DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7766EA32-CAF7-41C5-8961-96E907C7E1D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7766EA32-CAF7-41C5-8961-96E907C7E1D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7766EA32-CAF7-41C5-8961-96E907C7E1D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7766EA32-CAF7-41C5-8961-96E907C7E1D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C2A0C5D-8869-41A8-A1B4-F2880F80895E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C2A0C5D-8869-41A8-A1B4-F2880F80895E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C2A0C5D-8869-41A8-A1B4-F2880F80895E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C2A0C5D-8869-41A8-A1B4-F2880F80895E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAD3A664-4BE6-4AFE-857A-FA206BED07FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAD3A664-4BE6-4AFE-857A-FA206BED07FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAD3A664-4BE6-4AFE-857A-FA206BED07FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAD3A664-4BE6-4AFE-857A-FA206BED07FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FF3065C-9135-4A54-B356-E5D8CBB8CDAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FF3065C-9135-4A54-B356-E5D8CBB8CDAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FF3065C-9135-4A54-B356-E5D8CBB8CDAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FF3065C-9135-4A54-B356-E5D8CBB8CDAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B2689C1-8867-45FE-9F9F-7E7DF8164229}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B2689C1-8867-45FE-9F9F-7E7DF8164229}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B2689C1-8867-45FE-9F9F-7E7DF8164229}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B2689C1-8867-45FE-9F9F-7E7DF8164229}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

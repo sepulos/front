@@ -1,0 +1,12 @@
+D:\Uczelnia\aplikacja\BilleCar\BilleCar.BLL\bin\Debug\BilleCar.BLL.dll
+D:\Uczelnia\aplikacja\BilleCar\BilleCar.BLL\bin\Debug\BilleCar.BLL.pdb
+D:\Uczelnia\aplikacja\BilleCar\BilleCar.BLL\bin\Debug\BilleCar.BOL.dll
+D:\Uczelnia\aplikacja\BilleCar\BilleCar.BLL\bin\Debug\BilleCar.DAL.dll
+D:\Uczelnia\aplikacja\BilleCar\BilleCar.BLL\bin\Debug\EntityFramework.dll
+D:\Uczelnia\aplikacja\BilleCar\BilleCar.BLL\bin\Debug\BilleCar.BOL.pdb
+D:\Uczelnia\aplikacja\BilleCar\BilleCar.BLL\bin\Debug\BilleCar.DAL.pdb
+D:\Uczelnia\aplikacja\BilleCar\BilleCar.BLL\bin\Debug\BilleCar.DAL.dll.config
+D:\Uczelnia\aplikacja\BilleCar\BilleCar.BLL\bin\Debug\EntityFramework.xml
+D:\Uczelnia\aplikacja\BilleCar\BilleCar.BLL\obj\Debug\BilleCar.BLL.csprojResolveAssemblyReference.cache
+D:\Uczelnia\aplikacja\BilleCar\BilleCar.BLL\obj\Debug\BilleCar.BLL.dll
+D:\Uczelnia\aplikacja\BilleCar\BilleCar.BLL\obj\Debug\BilleCar.BLL.pdb

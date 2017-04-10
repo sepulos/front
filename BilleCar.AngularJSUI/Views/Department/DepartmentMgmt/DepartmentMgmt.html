@@ -1,0 +1,29 @@
+﻿<div class="well">
+    <input type="text" class="form-control" ng-model="search" placeholder="Wyszukaj" />
+</div>
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h3 class="panel-title">Lista oddziałów</h3>
+    </div>
+    <div class="panel-body">
+
+        <table class="table table-striped table-hover ">
+            <thead>
+                <tr>
+                    <th ng-click="Sort('DepartmentId')">ID</th>
+                    <th ng-click="Sort('Name')">Nazwa</th>
+                    <th ng-click="Sort('Adress')">Adres</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="dp in deps | filter:search | orderBy:key:AscOrDesc">
+                    <td>{{dp.DepartmentId}}</td>
+                    <td>{{dp.Name}}</td>
+                    <td>{{dp.Adress}}</td>                   
+                </tr>
+                </tbody>
+            </table>
+
+    </div>
+</div>
