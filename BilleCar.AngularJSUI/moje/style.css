@@ -1,0 +1,11 @@
+﻿.height{
+    height: 100%;
+}
+.width{
+    width: 60%;
+}
+.verticalcenter{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}

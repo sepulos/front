@@ -1,52 +1,36 @@
 ﻿app.config(function ($routeProvider) {
     $routeProvider
-        .when('/announcementDetail', {
+        .when('/announcementDetail/:AnnouncementId?', {
             templateUrl: 'Views/AnnouncementDetail/AnnouncementDetail.html',
             controller: 'announcementDetailController'
         });
 });
 
-app.factory('announcementService', function ($http) {
-    annObj = {};
-    annObj.getAll = function () {
+app.factory('announcementDetailService', function ($http) {
+    annUpdateOjb = {};
+
+    annUpdateOjb.GetByID = function (aid) {
         var anns;
-        anns = $http({ method: 'Get', url: 'http://localhost:57037/api/Announcement' }).
+
+        anns = $http({ method: 'Get', url: 'http://localhost:57037/api/Announcement', params: { id: aid } }).
             then(function (response) {
                 return response.data;
             });
+
         return anns;
     };
-    return annObj;
+
+    return annUpdateOjb;
 });
 
-app.factory('departmentService', function ($http) {
-    depObj = {};
-    depObj.getAll = function () {
-        var deps;
-        deps = $http({ method: 'Get', url: 'http://localhost:57037/api/Department' }).
-            then(function (response) {
-                return response.data;
-            });
-        return deps;
-    };
-    return depObj;
-});
 
-app.controller('announcementDetailController', function ($scope, announcementService, departmentService) {
-    $scope.msg = "Witaj mordo";
+app.controller('announcementDetailController', function ($scope, $routeParams, announcementDetailService) {
+    $scope.msg = "Witaj mordo na details";
 
-    announcementService.getAll().then(function (result) {
+    $scope.aid = $routeParams.AnnouncementId;
+    announcementDetailService.GetByID($scope.aid).then(function (result) {
         $scope.anns = result;
+        //$scope.anns.AddDate = new Date($scope.anns.AddDate);
     });
-
-
-    departmentService.getAll().then(function (result) {
-        $scope.deps = result;
-    });
-
-    $scope.Sort = function (col) {
-        $scope.key = col;
-        $scope.AsOrDesc = !$scope.AsOrDesc;
-    };
 
 });
