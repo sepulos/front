@@ -26,101 +26,97 @@
     <script src="Views/Common/Login/login.js"></script>
     <script src="Views/Common/Register/register.js"></script>
 </head>
-<body layout="column">
-   <!-- <nav class="navbar navbar-default sidebar" role="navigation">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">BilleCar</a>
-            </div>
+<body ng-app="plnkrApp" ng-controller="DemoController" layout="column">
+    <md-content flex layout-padding>
+        <md-toolbar class="md-whiteframe-z2" layout="row" style="float: left;">
 
-            <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#home">Strona główna<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
-                    <li><a href="#listaoddzialow">Lista oddziałów<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
-                    <li><a href="#announcement">Lista ogłoszeń<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
-                    <li><a href="#login">Zaloguj się<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
+            <md-button class="nav__menuIcon md-icon-button" ng-click="clickSide('left')">
+                <md-icon class="">menu</md-icon>
+            </md-button>
 
-                    <li><a href="#register">Rejestracja<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
-                    <li><a href="#">Twój Profil<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
-                    <li><a href="#">Wiadomości<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Ustawienia <span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-cog"></span></a>
-                        <ul class="dropdown-menu forAnimate" role="menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">One more separated link</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <div class="main">-->
+            <h1 class="md-toolbar-tools"> Billecar</h1>
+        </md-toolbar>
+        <md-content flex>
+            <md-sidenav md-component-id="left" class="md-sidenav-left md-whiteframe-z2" layout="column">
+                <img style="width: 100%; height: 150px;" class="md-card-image" alt="login" src="Views/Common/Login/img/login.jpg" />
 
-      <!--  <div layout-gt-xs="row">
-            <div flex-gt-xs>
-                <h4>Date-picker with min date and max date</h4>
-                <md-datepicker ng-model="ctrl.myDate" md-placeholder="Enter date"
-                               md-min-date="ctrl.minDate" md-max-date="ctrl.maxDate"></md-datepicker>
-            </div>
+                <md-list>
 
-            <md-input-container>
-                <label>Title</label>
-                <input ng-model="user.title">
-            </md-input-container>
-            </div>-->
 
-    <md-toolbar class="md-whiteframe-z2" layout="row" style="float: left;">
 
-        <md-button class="menu" ng-click="toggleList()">
-            <md-icon>menu</md-icon>
-        </md-button>
+                    <md-item style="float: left; display: block; width: 100%;">
+                        <a class="nav__link" href="#home">
+                            <md-button>
+                                <md-icon>home</md-icon>
+                                <span class="nav__item" md-line>Strona główna</span>
+                            </md-button>
+                        </a>
+                    </md-item>
 
-        <h1> Billecar</h1>
-    </md-toolbar>
+                    <md-item style="display: block; width: 100%;">
+                        <a class="nav__link" href="#announcement">
+                            <md-button>
+                                <md-icon>menu</md-icon>
+                                <span class="nav__item" md-line>Lista ogłoszeń</span>
+                            </md-button>
+                        </a>
+                    </md-item>
 
-    <div layout="row" flex>
-        <md-sidenav layout="column"
-                    md-component-id="left" md-is-locked-open="$mdMedia('(min-width: 1000px)')"
-                    class="md-whiteframe-16dp">
-            <md-list>
-                <a href="#announcement" md-list-item style="display: block; width: 100%;">
-                    <md-button>
-                        <md-icon>menu</md-icon>
-                        <span md-line>Menu</span>
-                        <span md-line class="secundary">co wybierzesz</span>
-                    </md-button>
-                </a md-list-item>
+                    <md-item style="display: block; width: 100%;">
+                        <a class="nav__link" href="#announcement">
+                            <md-button>
+                                <md-icon>playlist_add</md-icon>
+                                <span class="nav__item" md-line>Dodaj ogłoszenie</span>
+                            </md-button>
+                        </a>
+                    </md-item>
 
-                <a href="#listaoddzialow" md-list-item style="float: left; display: block; width: 100%;">
-                    <md-button>
-                        <md-icon>pets</md-icon>
-                        <span md-line>Menu</span>
-                    </md-button>
-                </a md-list-item>
-            </md-list>
-        </md-sidenav>
+                    <md-item style="float: left; display: block; width: 100%;">
+                        <a class="nav__link" href="#listaoddzialow">
+                            <md-button>
+                                <md-icon>account_balance</md-icon>
+                                <span class="nav__item" md-line>Lista oddziałów</span>
+                            </md-button>
+                        </a>
+                    </md-item>
 
-        <md-content flex id="content">
-            <div ng-view>
+                    <md-item style="float: left; display: block; width: 100%;">
+                        <a class="nav__link" href="#login">
+                            <md-button>
+                                <md-icon>face</md-icon>
+                                <span class="nav__item" md-line>Logowanie</span>
+                            </md-button>
+                        </a>
+                    </md-item>
 
-            </div>
+                    <md-item style="float: left; display: block; width: 100%;">
+                        <a class="nav__link" href="#register">
+                            <md-button>
+                                <md-icon>person_add</md-icon>
+                                <span class="nav__item" md-line>Rejestracja</span>
+                            </md-button>
+                        </a>
+                    </md-item>
+
+                    <md-item style="float: left; display: block; width: 100%;">
+                        <a class="nav__link" href="#register">
+                            <md-button>
+                                <md-icon>group_add</md-icon>
+                                <span class="nav__item" md-line>Lista użytkowników</span>
+                            </md-button>
+                        </a>
+                    </md-item>
+
+
+                </md-list>
+            </md-sidenav>
+            <md-content>
+                <div ng-view>
+
+                </div>
+            </md-content>
         </md-content>
-    </div>
-
-            <!-- Content Here -->
-
-       <!-- </div>-->
+    </md-content>
 
 </body>
 </html>

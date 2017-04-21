@@ -1,8 +1,8 @@
 ﻿
 <div class="login">
     <div class="login__card" layout="row" layout-align="space-around">
-        <md-card flex="flex" flex-gt-sm="50" flex-gt-md="33">
-            <img style="width: 100%;" class="md-card-image" alt="login" src="Views/Common/Login/img/login.jpg" />
+        <md-card flex="flex" flex-gt-sm="50" flex-gt-md="40">
+            <img style="width: 100%; height: 150px;" class="md-card-image" alt="login" src="Views/Common/Login/img/login.jpg" />
             <md-card-title>
                 <md-card-title-text>
                     <span class="md-headline">Logowanie</span>
@@ -26,6 +26,15 @@
                             <div ng-message="required" class="my-message">Podaj swoje hasło</div>
                         </div>
                     </md-input-container>
+
+                    <md-button layout="row">
+                        <md-icon>done</md-icon>
+                        <label style="margin: 5px 0 0 10px;">Zaloguj się</label>
+                    </md-button>
+
+                    <label  style="width: 100%; text-align: right;">
+                        <label style="float: right;"> Chcesz się <a href="#register">zarejestrować?</a></label>
+                    </label>
                 </form>
             </md-card-content>
         </md-card>
