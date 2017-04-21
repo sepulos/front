@@ -1,0 +1,56 @@
+﻿<form name="detailAnn" novalidate>
+    <div class="" id="profilePanel">
+        <div class="top__title">Szczegóły przejazdu</div>
+        <div class="col-lg-6 top">
+            <div class="top__text">
+                <div class="top__light">Numer ogloszenia :</div>
+                <div class="top__bold">{{ anns.AnnouncementId }}</div>
+            </div>
+            <div class="top__text">
+                <div class="top__light">Autor ogloszenia :</div>
+                <div class="top__bold">{{ anns.AutorRefUser }}</div>
+            </div>
+            <div class="top__text">
+                <div class="top__light">Numer oddziału :</div>
+                <div class="top__bold">{{ anns.DepartmentRefId }}</div>
+            </div>
+            <div class="top__text">
+                <div class="top__light">Miejsce startowe :</div>
+                <div class="top__bold">{{ anns.StartPlace }}</div>
+            </div>
+            <div class="top__text">
+                <div class="top__light">Będę jechał do :</div>
+                <div class="top__bold">{{ anns.EndPlace }}</div>
+            </div>
+            <div class="top__text">
+                <div class="top__light">Wolne miejsca :</div>
+                <div class="top__bold">{{ anns.FreeSlots }}</div>
+            </div>
+
+        </div>
+        <div class="col-lg-6 top__map">
+            <iframe class="mapka" src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d18864.52285835237!2d20.460370288336375!3d53.770523824474324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x46e2792d071419c7%3A0x106a8126cf54c20f!2sOlsztyn!3m2!1d53.778422!2d20.4801193!4m5!1s0x46e27f375ab76763%3A0xf2ae572fd310f8fc!2sKortowo%2C+Olsztyn!3m2!1d53.755314999999996!2d20.4561325!5e0!3m2!1spl!2spl!4v1492019715231" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+
+
+        <div class="buttons">
+           <div class="add__input"><input type="submit" value="Edytuj ogłoszenie" ng-click="Update(an)" class="add__btn edit" /></div>
+            <div class="add__input"><input type="button" value="Usuń ogłoszenie" class="add__btn delete" /></div>
+        </div>
+
+
+            <div class="icons">
+                <div class="add">
+                    <div class="add__icon">
+                        <img class="add__img" src="/Views/AnnouncementDetail/src/glut.png" />
+                    </div>
+                    <div class="add__icon">
+                        <img class="add__img" src="/Views/AnnouncementDetail/src/glut.png" />
+                    </div>
+                    <div class="add__plus">
+                        +
+                    </div>
+            </div>
+        </div>
+    </div>
+</form>

@@ -3,14 +3,21 @@
 <head>
     <title></title>
     <meta charset="utf-8" />
+    <script src="Scripts/jquery-3.2.1.min.js"></script>
     <link href="Content/style.css" rel="stylesheet" />
     <link href="moje/bootstrap.min.css" rel="stylesheet" />
     <link href="Content/wszystko.css" rel="stylesheet" />
-    <script src="Scripts/jquery-3.1.1.min.js"></script>
+    <link href="Content/angular-material.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script src="Scripts/styleJS.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Advent+Pro&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <script src="Scripts/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="Scripts/angular/angular.min.js"></script>
+    <script src="Scripts/angular-aria/angular-aria.js"></script>
+    <script src="Scripts/angular-animate/angular-animate.js"></script>
+    <script src="Scripts/angular-material/angular-material.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="Scripts/main.js"></script>
     <script src="Views/Department/DepartmentMgmt/departmentMgmt.js"></script>
     <script src="Views/Common/Home/home.js"></script>
@@ -19,10 +26,9 @@
     <script src="Views/Common/Login/login.js"></script>
     <script src="Views/Common/Register/register.js"></script>
 </head>
-<body>
-    <nav class="navbar navbar-default sidebar" role="navigation">
+<body layout="column">
+   <!-- <nav class="navbar navbar-default sidebar" role="navigation">
         <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
@@ -32,7 +38,7 @@
                 </button>
                 <a class="navbar-brand" href="#">BilleCar</a>
             </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
+
             <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#home">Strona główna<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
@@ -59,12 +65,62 @@
             </div>
         </div>
     </nav>
-    <div class="main">
-        <!-- Content Here -->
-        <div ng-view>
+    <div class="main">-->
 
-        </div>
+      <!--  <div layout-gt-xs="row">
+            <div flex-gt-xs>
+                <h4>Date-picker with min date and max date</h4>
+                <md-datepicker ng-model="ctrl.myDate" md-placeholder="Enter date"
+                               md-min-date="ctrl.minDate" md-max-date="ctrl.maxDate"></md-datepicker>
+            </div>
+
+            <md-input-container>
+                <label>Title</label>
+                <input ng-model="user.title">
+            </md-input-container>
+            </div>-->
+
+    <md-toolbar class="md-whiteframe-z2" layout="row" style="float: left;">
+
+        <md-button class="menu" ng-click="toggleList()">
+            <md-icon>menu</md-icon>
+        </md-button>
+
+        <h1> Billecar</h1>
+    </md-toolbar>
+
+    <div layout="row" flex>
+        <md-sidenav layout="column"
+                    md-component-id="left" md-is-locked-open="$mdMedia('(min-width: 1000px)')"
+                    class="md-whiteframe-16dp">
+            <md-list>
+                <a href="#announcement" md-list-item style="display: block; width: 100%;">
+                    <md-button>
+                        <md-icon>menu</md-icon>
+                        <span md-line>Menu</span>
+                        <span md-line class="secundary">co wybierzesz</span>
+                    </md-button>
+                </a md-list-item>
+
+                <a href="#listaoddzialow" md-list-item style="float: left; display: block; width: 100%;">
+                    <md-button>
+                        <md-icon>pets</md-icon>
+                        <span md-line>Menu</span>
+                    </md-button>
+                </a md-list-item>
+            </md-list>
+        </md-sidenav>
+
+        <md-content flex id="content">
+            <div ng-view>
+
+            </div>
+        </md-content>
     </div>
+
+            <!-- Content Here -->
+
+       <!-- </div>-->
 
 </body>
 </html>

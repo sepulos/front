@@ -18,6 +18,20 @@ app.factory('announcementService', function ($http) {
             });
         return anns;
     };
+
+  //  annObj.CreateAnns = function (Anns) {
+    //    var anns;
+    //
+    //    anns = $http({ method: 'Post', url: 'http://localhost:57037/api/Announcement', data: Anns }).
+   //         then(function (response) {
+   //             return response.data;
+   //         }, function (error) {
+   //             return error.data;
+  //          });
+  //      return anns;
+  //  };
+
+
     return annObj;
 });
 
@@ -50,5 +64,6 @@ app.controller('announcementController', function ($scope, announcementService, 
         $scope.key = col;
         $scope.AsOrDesc = !$scope.AsOrDesc;
     };
+
 
 });

@@ -1,12 +1,79 @@
 ﻿<div class="well">
     <input type="text" class="form-control" ng-model="search" placeholder="Wyszukaj" />
 </div>
-<div class="col-xs-12 col-md-4">
-    <select id="filter-sector" class="form-control">
-        <option value=""></option>
-        <option ng-repeat="dp in deps" value="{{dp.DepartmentId}}">{{dp.Name}}</option>
-    </select>
-</div>
+
+
+<form class="add__form">
+    <fieldset>
+        <legend>Utwórz nowe ogłoszenie: </legend>
+        <div class="new__carpet">
+            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+        </div>
+        
+
+        <div class="add__slide">
+            <div class="form-group">
+                <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" ng-model="anns.email" id="startlace" placeholder="Email użytkownika : ">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword" class="col-lg-2 control-label">Miejsce startowe</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" ng-model="anns.StartPlace" id="startlace" placeholder="Miejsce startowe">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="inputPassword" class="col-lg-2 control-label">Miejsce docelowe</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" ng-model="anns.EndPlace" id="EndPlace" placeholder="Miejsce docelowe">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox"> Checkbox
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="inputPassword" class="col-lg-2 control-label">Data przejazdu : </label>
+                <div class="col-lg-10">
+                    <input type="datetime-local" class="form-control" id="inputPassword" placeholder="Data przejazdu">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="inputPassword" class="col-lg-2 control-label">Ilość wolnych miejsc : </label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" id="inputPassword" placeholder="Ilość wolnych miejsc">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="select" class="col-lg-2 control-label">Oddział:</label>
+                <div class="col-lg-10">
+                    <select id="filter-sector" class="form-control">
+                        <option value="">-- wybierz oddział --</option>
+                        <option ng-repeat="dp in deps" value="{{dp.DepartmentId}}">{{dp.Name}}</option>
+                    </select>
+                    <br>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-10 col-lg-offset-2">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="reset" class="btn btn-default">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+
+    </fieldset>
+</form>
+
+
 <div class="panel panel-primary">
     <div class="panel-heading">
         <h3 class="panel-title">Lista oddziałów</h3>
@@ -18,7 +85,7 @@
                 <tr>
                     <th ng-click="Sort('AnnouncementId')">ID Ogłoszenia</th>
                     <th ng-click="Sort('StartPlace')">Miejsce startowe</th>
-                    <th ng-click="Sort('StartPlace')">Miejsce końcowe</th>
+                    <th ng-click="Sort('EndPlace')">Miejsce końcowe</th>
                     <th ng-click="Sort('FreeSlots')">Ilość Miejsc</th>
                     <th class="text-right">Dodatkowe</th>
                     
