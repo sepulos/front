@@ -151,7 +151,7 @@
     <Content Include="Scripts\main.js" />
     <Content Include="Scripts\styleJS.js" />
     <Content Include="Views\AnnouncementCreate\AnnouncementCreate.html" />
-    <Content Include="Views\AnnouncementCreate\announcementDetail.js" />
+    <Content Include="Views\AnnouncementCreate\announcementCreate.js" />
     <Content Include="Views\AnnouncementDetail\AnnouncementDetail.html" />
     <Content Include="Views\AnnouncementDetail\announcementDetail.js" />
     <Content Include="Views\Common\Home\Home.html" />

@@ -1,56 +1,112 @@
-﻿<form name="detailAnn" novalidate>
-    <div class="" id="profilePanel">
-        <div class="top__title">Szczegóły przejazdu</div>
-        <div class="col-lg-6 top">
-            <div class="top__text">
-                <div class="top__light">Numer ogloszenia :</div>
-                <div class="top__bold">{{ anns.AnnouncementId }}</div>
-            </div>
-            <div class="top__text">
-                <div class="top__light">Autor ogloszenia :</div>
-                <div class="top__bold">{{ anns.AutorRefUser }}</div>
-            </div>
-            <div class="top__text">
-                <div class="top__light">Numer oddziału :</div>
-                <div class="top__bold">{{ anns.DepartmentRefId }}</div>
-            </div>
-            <div class="top__text">
-                <div class="top__light">Miejsce startowe :</div>
-                <div class="top__bold">{{ anns.StartPlace }}</div>
-            </div>
-            <div class="top__text">
-                <div class="top__light">Będę jechał do :</div>
-                <div class="top__bold">{{ anns.EndPlace }}</div>
-            </div>
-            <div class="top__text">
-                <div class="top__light">Wolne miejsca :</div>
-                <div class="top__bold">{{ anns.FreeSlots }}</div>
-            </div>
-
-        </div>
-        <div class="col-lg-6 top__map">
-            <iframe class="mapka" src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d18864.52285835237!2d20.460370288336375!3d53.770523824474324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x46e2792d071419c7%3A0x106a8126cf54c20f!2sOlsztyn!3m2!1d53.778422!2d20.4801193!4m5!1s0x46e27f375ab76763%3A0xf2ae572fd310f8fc!2sKortowo%2C+Olsztyn!3m2!1d53.755314999999996!2d20.4561325!5e0!3m2!1spl!2spl!4v1492019715231" frameborder="0" style="border:0" allowfullscreen></iframe>
-        </div>
+﻿
 
 
-        <div class="buttons">
-           <div class="add__input"><input type="submit" value="Edytuj ogłoszenie" ng-click="Update(an)" class="add__btn edit" /></div>
-            <div class="add__input"><input type="button" value="Usuń ogłoszenie" class="add__btn delete" /></div>
-        </div>
+<div>
+    <div layout="row" layout-align="space-around">
+        <md-card flex="flex" flex-gt-sm="80" flex-gt-md="80">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d18864.52285835237!2d20.460370288336375!3d53.770523824474324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x46e2792d071419c7%3A0x106a8126cf54c20f!2sOlsztyn!3m2!1d53.778422!2d20.4801193!4m5!1s0x46e27f375ab76763%3A0xf2ae572fd310f8fc!2sKortowo%2C+Olsztyn!3m2!1d53.755314999999996!2d20.4561325!5e0!3m2!1spl!2spl!4v1492019715231" frameborder="0" style="border:0" allowfullscreen></iframe>            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">Dodaj nowe ogłoszenie</span>
+                </md-card-title-text>
+            </md-card-title>
+
+            <md-card-content>
+                <form name="Form">
+                    <div layout="row">
+
+                        <md-input-container class="md-block" flex="100">
+                            <label>Imię</label>
+                            <input type="text" name="name" ng-model="" required="" />
+                            <div ng-messages="Form.name.$error" role="alert" multiple="">
+                                <div ng-message="required" class="my-message">Podaj swoje imię</div>
+                            </div>
+                        </md-input-container>
+
+                        <md-input-container class="md-block" flex="100">
+                            <label>Imię</label>
+                            <input type="text" name="name" ng-model="" required="" />
+                            <div ng-messages="Form.name.$error" role="alert" multiple="">
+                                <div ng-message="required" class="my-message">Podaj swoje imię</div>
+                            </div>
+                        </md-input-container>
 
 
-            <div class="icons">
-                <div class="add">
-                    <div class="add__icon">
-                        <img class="add__img" src="/Views/AnnouncementDetail/src/glut.png" />
+                        <md-input-container class="md-block" flex="100">
+                            <label>Nazwisko</label>
+                            <input type="text" name="surName" ng-model="" required="" />
+                            <div ng-messages="Form.surName.$error" role="alert" multiple="">
+                                <div ng-message="required" class="my-message">Podaj swoje nazwisko</div>
+                            </div>
+                        </md-input-container>
+
                     </div>
-                    <div class="add__icon">
-                        <img class="add__img" src="/Views/AnnouncementDetail/src/glut.png" />
+
+                    <div layout="row">
+
+                        <md-input-container class="md-block" flex="100">
+                            <label>Hasło</label>
+                            <input type="text" name="passwd" ng-model="" required="" />
+                            <div ng-messages="Form.passwd.$error" role="alert" multiple="">
+                                <div ng-message="required" class="my-message">Podaj swoje hasło</div>
+                            </div>
+                        </md-input-container>
+
+
+                        <md-input-container class="md-block" flex="100">
+                            <label>Powtórz hasło</label>
+                            <input type="text" name="rePasswd" ng-model="" required="" />
+                            <div ng-messages="Form.rePasswd.$error" role="alert" multiple="">
+                                <div ng-message="required" class="my-message">Podaj swoje hasło</div>
+                            </div>
+                        </md-input-container>
+
                     </div>
-                    <div class="add__plus">
-                        +
+
+                    <md-input-container class="md-block" flex="100">
+                        <label>E-mail</label>
+                        <input type="text" name="email" ng-model="" required="" />
+                        <div ng-messages="Form.email.$error" role="alert" multiple="">
+                            <div ng-message="required" class="my-message">Podaj swój e-mail</div>
+                        </div>
+                    </md-input-container>
+
+                    <div layout="row">
+
+                        <md-input-conteiner class="md-block" flex="100">
+                            <select id="filter-sector" class="form-control">
+                                <option value="">-- wybierz swój oddział --</option>
+                                <option ng-repeat="dp in deps" value="{{dp.DepartmentId}}">{{dp.Name}}</option>
+                            </select>
+
+                        </md-input-conteiner>
+
+
+                        <md-input-container class="" flex="100">
+                            <md-icon style="padding: 0 50% ; font-size: 40px; margin-top: -30px;">crop_rotate</md-icon>
+                        </md-input-container>
+
+
+                        <md-input-container class="md-block" flex="100">
+                            <label>Adres końcowy</label>
+                            <input type="text" name="koniec" ng-model="" required="" />
+                            <div ng-messages="Form.koniec.$error" role="alert" multiple="">
+                                <div ng-message="required" class="my-message">Podaj adres końcowy</div>
+                            </div>
+                        </md-input-container>
+
                     </div>
-            </div>
-        </div>
+
+                    <md-button layout="row">
+                        <md-icon>done</md-icon>
+                        <label style="margin: 5px 0 0 10px;">Zarejestruj się</label>
+                    </md-button>
+
+                    <label style="width: 100%; text-align: right;">
+                        <label style="float: right;"> Chcesz się <a href="#login">zalogować?</a></label>
+                    </label>
+                </form>
+            </md-card-content>
+        </md-card>
+
     </div>
-</form>
+</div>
