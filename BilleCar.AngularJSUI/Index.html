@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html ng-app="app">
 <head>
     <title></title>
@@ -27,16 +28,16 @@
     <script src="Views/Common/Register/register.js"></script>
 </head>
 <body ng-app="plnkrApp" ng-controller="DemoController" layout="column">
-    <md-content flex layout-padding>
-        <md-toolbar class="md-whiteframe-z2" layout="row" style="float: left;">
+    <md-content flex>
+        <md-toolbar class="md-whiteframe-z2" layout="row">
 
-            <md-button class="nav__menuIcon md-icon-button" ng-click="clickSide('left')">
-                <md-icon class="">menu</md-icon>
+            <md-button class=" material-icons md-48" ng-click="clickSide('left')">
+                <md-icon>menu</md-icon>
             </md-button>
 
             <h1 class="md-toolbar-tools"> Billecar</h1>
         </md-toolbar>
-        <md-content flex>
+        <md-content layout="column">
             <md-sidenav md-component-id="left" class="md-sidenav-left md-whiteframe-z2" layout="column">
                 <img style="width: 100%; height: 150px;" class="md-card-image" alt="login" src="Views/Common/Login/img/login.jpg" />
 
@@ -44,7 +45,7 @@
 
 
 
-                    <md-item style="float: left; display: block; width: 100%;">
+                    <md-item layout="row">
                         <a class="nav__link" href="#home">
                             <md-button>
                                 <md-icon>home</md-icon>
@@ -110,7 +111,7 @@
 
                 </md-list>
             </md-sidenav>
-            <md-content>
+            <md-content style="min-height: 100vh;">
                 <div ng-view>
 
                 </div>

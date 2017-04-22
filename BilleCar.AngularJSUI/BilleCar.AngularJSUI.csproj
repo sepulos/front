@@ -156,6 +156,7 @@
     <Content Include="Views\AnnouncementDetail\announcementDetail.js" />
     <Content Include="Views\Common\Home\Home.html" />
     <Content Include="Views\Common\Home\home.js" />
+    <Content Include="Views\Common\Home\src\home.jpg" />
     <Content Include="Views\Common\Login\img\login.jpg" />
     <Content Include="Views\Common\Login\Login.html" />
     <Content Include="Views\Common\Login\login.js" />
