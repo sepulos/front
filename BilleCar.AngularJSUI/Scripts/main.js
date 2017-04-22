@@ -14,7 +14,6 @@ app.config(function ($routeProvider) {
 });
 
 app.config(function ($mdThemingProvider) {
-    $mdThemingProvider.theme('dark-grey').backgroundPalette('grey').dark();
 });
 
 app.controller('homeController', function ($scope, $mdSidenav ) {
