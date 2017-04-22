@@ -1,113 +1,31 @@
 ﻿<div class="well">
     <input type="text" class="form-control" ng-model="search" placeholder="Wyszukaj" />
 </div>
+<md-content class="md-padding" layout="column">
 
-
-<form class="add__form">
-    <fieldset>
-        <legend>Utwórz nowe ogłoszenie: </legend>
-        <div class="new__carpet">
-            <i class="fa fa-chevron-down" aria-hidden="true"></i>
-        </div>
+    <div  ng-repeat="an in anns | filter:search | orderBy:key:AscOrDesc" flex="50" layout="column">
+        <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
         
-
-        <div class="add__slide">
-            <div class="form-group">
-                <label for="inputEmail" class="col-lg-2 control-label">Email</label>
-                <div class="col-lg-10">
-                    <input type="text" class="form-control" ng-model="anns.email" id="startlace" placeholder="Email użytkownika : ">
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="inputPassword" class="col-lg-2 control-label">Miejsce startowe</label>
-                <div class="col-lg-10">
-                    <input type="text" class="form-control" ng-model="anns.StartPlace" id="startlace" placeholder="Miejsce startowe">
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="inputPassword" class="col-lg-2 control-label">Miejsce docelowe</label>
-                <div class="col-lg-10">
-                    <input type="text" class="form-control" ng-model="anns.EndPlace" id="EndPlace" placeholder="Miejsce docelowe">
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox"> Checkbox
-                        </label>
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="inputPassword" class="col-lg-2 control-label">Data przejazdu : </label>
-                <div class="col-lg-10">
-                    <input type="datetime-local" class="form-control" id="inputPassword" placeholder="Data przejazdu">
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="inputPassword" class="col-lg-2 control-label">Ilość wolnych miejsc : </label>
-                <div class="col-lg-10">
-                    <input type="text" class="form-control" id="inputPassword" placeholder="Ilość wolnych miejsc">
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="select" class="col-lg-2 control-label">Oddział:</label>
-                <div class="col-lg-10">
-                    <select id="filter-sector" class="form-control">
-                        <option value="">-- wybierz oddział --</option>
-                        <option ng-repeat="dp in deps" value="{{dp.DepartmentId}}">{{dp.Name}}</option>
-                    </select>
-                    <br>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-lg-10 col-lg-offset-2">
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                    <button type="reset" class="btn btn-default">Cancel</button>
-                </div>
-            </div>
-        </div>
-
-
-    </fieldset>
-</form>
-
-
-<div class="panel panel-primary">
-    <div class="panel-heading">
-        <h3 class="panel-title">Lista oddziałów</h3>
-    </div>
-    <div class="panel-body">
-
-        <table class="table table-striped table-hover ">
-            <thead>
-                <tr>
-                    <th ng-click="Sort('AnnouncementId')">ID Ogłoszenia</th>
-                    <th ng-click="Sort('StartPlace')">Miejsce startowe</th>
-                    <th ng-click="Sort('EndPlace')">Miejsce końcowe</th>
-                    <th ng-click="Sort('FreeSlots')">Ilość Miejsc</th>
-                    <th class="text-right">Dodatkowe</th>
-                    
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat="an in anns | filter:search | orderBy:key:AscOrDesc">
-                    <td>{{ an.AnnouncementId }}</td>
-                    <td>{{an.StartPlace}}</td>
-                    <td>{{an.EndPlace}}</td>
-                    <td>{{an.FreeSlots}}</td>  
-                    <td class="text-right"><a href="#announcementDetail/{{ an.AnnouncementId }}" class="ann__btn">Szczegóły</a></td>
-                </tr>
-                </tbody>
-
-
-            <!--<tr ng-repeat="dp in deps | filter:search | orderBy:key:AscOrDesc">
-                <td>{{ dp.DepartmentId }}</td>
-                <td>{{dp.Name}}</td>
-                <td>{{dp.Adress}}</td>
-                <td class="text-center"><a href="#" class="label" style="color: black; background: lightblue; padding: 5px 15px; float: left;">Szczegóły</a></td>
-            </tr>-->
-        </table>
-    </div>
+            <md-card-title>
+                <md-card-title-text>
+                    <span style="font-size: 30px;" class="md-headline">{{an.StartPlace}}</span>
+                    <span style="font-size: 18px;" class="md-subhead">{{an.EndPlace}}</span>
+                    <span style="font-size: 18px;" class="md-subhead">Ilość wolnych miejsc: {{an.FreeSlots}}</span>
+                </md-card-title-text>
+                <md-card-title-media>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d18864.52285835237!2d20.460370288336375!3d53.770523824474324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x46e2792d071419c7%3A0x106a8126cf54c20f!2sOlsztyn!3m2!1d53.778422!2d20.4801193!4m5!1s0x46e27f375ab76763%3A0xf2ae572fd310f8fc!2sKortowo%2C+Olsztyn!3m2!1d53.755314999999996!2d20.4561325!5e0!3m2!1spl!2spl!4v1492019715231" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </md-card-title-media>
+            </md-card-title>
+            <md-card-actions layout="row" layout-align="end center">
+                <md-button>Edytuj</md-button>
+                <md-button>
+                    <a href="#announcementDetail/{{ an.AnnouncementId }}">
+                        Zobacz
+                    </a>
+                </md-button>
+            </md-card-actions>
+        
+        </md-card>
 </div>
+
+</md-content>

@@ -4,6 +4,8 @@
     position: relative;
 }
 
+
+
 .color {
     background: #6CA3F9;
 }
@@ -218,19 +220,6 @@ th {
     position: relative;
 }
 
-.new__carpet{
-    position: absolute;
-    top: -20px;
-    right: 20px;
-    font-size: 30px;
-    padding: 10px;
-    cursor: pointer;
-}
-
-.add__slide{
-    display: none;
-    margin-bottom: 30px;
-}
 
 
 
