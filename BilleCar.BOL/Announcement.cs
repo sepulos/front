@@ -10,6 +10,11 @@ namespace BilleCar.BOL
 {
     public partial class Announcement
     {
+        public Announcement()
+        {
+            StartDate = DateTime.Now;
+        }
+
         [Key]
         public int AnnouncementId { get; set; }
         public string AutorRefUser { get; set; }
@@ -20,7 +25,7 @@ namespace BilleCar.BOL
         public Department DepartmentId { get; set; }
         public string StartPlace { get; set; }
         public string EndPlace { get; set; }
-        public DateTime AddDate { get; set; }
+        public DateTime? AddDate { get; set; }
         public DateTime StartDate { get; set; }
         public int FreeSlots { get; set; }
 

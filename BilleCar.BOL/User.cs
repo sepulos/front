@@ -10,7 +10,13 @@ namespace BilleCar.BOL
 {
     public partial class User
     {
+        public User()
+        {
+            RoleId = 2;
+            RegisterDate = DateTime.Now;
+        }
 
+        public int UserId { get; set; }
         public string Name { get; set; }
         public string SurName { get; set; }
         public string Pass { get; set; }

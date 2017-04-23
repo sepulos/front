@@ -246,7 +246,6 @@ th {
 }
 
 .create__btn:hover{
-    transform: scale(1.2);
     color: black;
 }
 
@@ -268,7 +267,9 @@ th {
     border-radius: 50%;
 }
 
-
+.sort{
+    padding-right: 15px;
+}
 
 
 
