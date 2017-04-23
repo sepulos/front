@@ -74,22 +74,20 @@ app.controller('registerController', function ($scope, $http, departmentService,
         $scope.users = result;
     });
 
-    $scope.CreateUsers = function (Users, IsValid) {
-        if (IsValid) {
-            userService.createUsers(Users).then(function (result) {
-                $scope.Msg = " Udało Ci się utworzyć użytkownika " + result.Email;
-                $scope.Flg = true;
-                $scope.Flg2 = true;
-                userService.getAll().then(function (result) {
-                    $scope.users = result;
-                });
-
-                //$('#alert').fadeTo(2000, 500).slideUp(2000, function () {
-                //    $('#alert').slideUp(1000);
-                // });
-
+    $scope.CreateUsers = function (Users) {
+        userService.createUsers(Users).then(function (result) {
+            $scope.Msg = " Udało Ci się utworzyć użytkownika " + result.Email;
+            $scope.Flg = true;
+            $scope.Flg2 = true;
+            userService.getAll().then(function (result) {
+                $scope.users = result;
             });
-        };
+
+            //$('#alert').fadeTo(2000, 500).slideUp(2000, function () {
+            //    $('#alert').slideUp(1000);
+            // });
+
+        });
     };
 
 });

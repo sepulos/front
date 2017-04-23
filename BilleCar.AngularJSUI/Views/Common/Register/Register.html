@@ -14,19 +14,19 @@
             </md-card-title>
 
             <md-card-content>
-                <form name="CreateUserForm" novalidate>
+                <form name="Form">
                     <div layout="row">
 
                         <md-input-container class="md-block" flex="100">
                             <label>Imię</label>
-                            <input type="text" name="name" ng-model="User.Name" required />
+                            <input type="text" name="name" ng-model="Reg.Name" required />
 
                         </md-input-container>
 
 
                         <md-input-container class="md-block" flex="100">
                             <label>Nazwisko</label>
-                            <input type="text" name="surName" ng-model="User.SurName" required />
+                            <input type="text" name="surName" ng-model="Reg.SurName" required />
 
                         </md-input-container>
 
@@ -36,7 +36,7 @@
 
                         <md-input-container class="md-block" flex="100">
                             <label>Hasło</label>
-                            <input type="text" name="passwd" ng-model="User.Pass" required />
+                            <input type="text" name="passwd" ng-model="Reg.Pass" required />
 
                         </md-input-container>
 
@@ -51,20 +51,20 @@
 
                     <md-input-container class="md-block" flex="100">
                         <label>E-mail</label>
-                        <input type="text" name="email" ng-model="User.Email" required />
+                        <input type="text" name="email" ng-model="Reg.Email" required />
 
                     </md-input-container>
 
                     <md-input-conteiner class="md-block" flex="100">
 
-                        <md-select placeholder="Wybierz oddział" ng-model="User.DepartmentRefId">
-                            <md-option ng-repeat="dp in deps" value="{{dp.DepartmentId}}" required>
+                        <md-select placeholder="Wybierz oddział" ng-model="Reg.DepartmentRefId">
+                            <md-option ng-repeat="dp in deps" value="{{dp.DepartmentId}}">
                                 {{dp.Name}}
                             </md-option>
                         </md-select>
                     </md-input-conteiner>
 
-                    <md-button ng-click="CreateUsers(User, CreateUserForm.$valid )" layout="row">
+                    <md-button ng-click="CreateUsers(Reg)" layout="row">
                         <md-icon>done</md-icon>
                         <label style="margin: 5px 0 0 10px;">Zarejestruj się</label>
                     </md-button>

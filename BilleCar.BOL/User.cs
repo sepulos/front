@@ -13,14 +13,13 @@ namespace BilleCar.BOL
         public User()
         {
             RoleId = 2;
-            RegisterDate = DateTime.Now;
         }
 
         public int UserId { get; set; }
         public string Name { get; set; }
         public string SurName { get; set; }
         public string Pass { get; set; }
-        public DateTime RegisterDate { get; set; }
+        public DateTime? RegisterDate { get; set; }
         [Key]
         public string Email { get; set; }
         public int DepartmentRefId { get; set; }

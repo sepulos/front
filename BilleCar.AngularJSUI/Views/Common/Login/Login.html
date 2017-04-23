@@ -9,7 +9,7 @@
             </md-card-title>
 
             <md-card-content>
-                <form name="Form" novalidate>
+                <form name="Form">
                     <md-input-container class="md-block">
                         <label>E-mail</label>
                         <input type="text" name="email" ng-model="vm.formData.email" required />
@@ -20,7 +20,7 @@
 
                     <md-input-container class="md-block">
                         <label>Hasło</label>
-                        <input type="text" name="passwd" ng-model="" required />
+                        <input type="text" name="passwd" ng-model="" required="" />
                         <div ng-messages="Form.passwd.$error" role="alert" multiple="">
                             <div ng-message="required" class="my-message">Podaj swoje hasło</div>
                         </div>
