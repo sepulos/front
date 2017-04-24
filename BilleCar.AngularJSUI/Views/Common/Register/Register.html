@@ -1,12 +1,14 @@
-﻿<div ng-show="Flg">
-    {{Msg}}
-</div>
+﻿
 
 
-<div>
     <div layout="row" layout-align="space-around">
         <md-card flex="flex" flex-gt-sm="66" flex-gt-md="40">
             <img style="width: 100%; height: 150px;" class="md-card-image" alt="login" src="Views/Common/Login/img/login.jpg" />
+            <md-card-title>
+                <div flex="100" id="alert" class="alert alert-success" ng-show="Flg">
+                    {{Msg}}
+                </div>
+            </md-card-title>
             <md-card-title>
                 <md-card-title-text>
                     <span class="md-headline">Rejestracja</span>
@@ -14,13 +16,16 @@
             </md-card-title>
 
             <md-card-content>
-                <form name="Form">
+                <form name="CreateFormUser" novalidate>
                     <div layout="row">
 
                         <md-input-container class="md-block" flex="100">
                             <label>Imię</label>
                             <input type="text" name="name" ng-model="Reg.Name" required />
 
+                            <ul>
+                                <li style="color: red;" ng-if="CreateFormUser.$submitted && CreateFormUser.name.$error.required">Imię jest wymagane</li>
+                            </ul>
                         </md-input-container>
 
 
@@ -28,6 +33,9 @@
                             <label>Nazwisko</label>
                             <input type="text" name="surName" ng-model="Reg.SurName" required />
 
+                            <ul>
+                                <li style="color: red;" ng-if="CreateFormUser.$submitted && CreateFormUser.surName.$error.required">Nazwisko jest wymagane</li>
+                            </ul>
                         </md-input-container>
 
                     </div>
@@ -38,12 +46,15 @@
                             <label>Hasło</label>
                             <input type="text" name="passwd" ng-model="Reg.Pass" required />
 
+                            <ul>
+                                <li style="color: red;" ng-if="CreateFormUser.$submitted && CreateFormUser.passwd.$error.required">Hasło jest wymagane</li>
+                            </ul>
                         </md-input-container>
 
 
                         <md-input-container class="md-block" flex="100">
                             <label>Powtórz hasło</label>
-                            <input type="text" name="rePasswd" ng-model="" />
+                            <input type="text" name="rePasswd" />
        
                         </md-input-container>
 
@@ -51,22 +62,28 @@
 
                     <md-input-container class="md-block" flex="100">
                         <label>E-mail</label>
-                        <input type="text" name="email" ng-model="Reg.Email" required />
-
+                        <input type="email" name="Email" ng-model="Reg.Email" required />
+                        <ul>
+                            <li style="color: red;" ng-if="CreateFormUser.$submitted && CreateFormUser.Email.$error.required">Email jest wymagany</li>
+                            <li style="color: red;" ng-if="CreateFormUser.$submitted && CreateFormUser.Email.$error.email">Email jest niepoprawyny</li>
+                        </ul>
                     </md-input-container>
 
                     <md-input-conteiner class="md-block" flex="100">
 
-                        <md-select placeholder="Wybierz oddział" ng-model="Reg.DepartmentRefId">
+                        <md-select name="department" placeholder="Wybierz oddział" ng-model="Reg.DepartmentRefId" required>
                             <md-option ng-repeat="dp in deps" value="{{dp.DepartmentId}}">
                                 {{dp.Name}}
                             </md-option>
                         </md-select>
+                        <ul>
+                            <li style="color: red;" ng-if="CreateFormUser.$submitted && CreateFormUser.department.$error.required">Oddział jest wymagany</li>
+                        </ul>
                     </md-input-conteiner>
 
-                    <md-button ng-click="CreateUsers(Reg)" layout="row">
+                    <md-button class="md-raised" type="submit" ng-click="CreateUsers(Reg, CreateFormUser.$valid)" layout="row">
                         <md-icon>done</md-icon>
-                        <label style="margin: 5px 0 0 10px;">Zarejestruj się</label>
+                        Zarejestruj się
                     </md-button>
 
                     <label style="width: 100%; text-align: right;">
@@ -77,4 +94,3 @@
         </md-card>
 
     </div>
-</div>
