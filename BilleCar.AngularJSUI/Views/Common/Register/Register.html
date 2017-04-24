@@ -8,6 +8,7 @@
                 <div flex="100" id="alert" class="alert alert-success" ng-show="Flg">
                     {{Msg}}
                 </div>
+                
             </md-card-title>
             <md-card-title>
                 <md-card-title-text>
@@ -66,6 +67,9 @@
                         <ul>
                             <li style="color: red;" ng-if="CreateFormUser.$submitted && CreateFormUser.Email.$error.required">Email jest wymagany</li>
                             <li style="color: red;" ng-if="CreateFormUser.$submitted && CreateFormUser.Email.$error.email">Email jest niepoprawyny</li>
+                        </ul>
+                        <ul ng-repeat="item in serverErrorMsgs">
+                            <li id="alert" style="color: red;">{{item[0]}}</li>
                         </ul>
                     </md-input-container>
 

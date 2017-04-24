@@ -39,8 +39,18 @@ namespace BilleCar.API.Controllers
         {
             if (ModelState.IsValid)
             {
-                userObjBs.Insert(user);
-                return CreatedAtRoute("DefaultApi", new { email = user.Email }, user);
+                if (userObjBs.Insert(user))
+                {
+                    return CreatedAtRoute("DefaultApi", new { email = user.Email }, user);
+                }
+                else
+                {
+                    foreach (var error in userObjBs.Errors)
+                    {
+                        ModelState.AddModelError("", error);
+                    }
+                    return BadRequest(ModelState);
+                }
             }
             else
             {

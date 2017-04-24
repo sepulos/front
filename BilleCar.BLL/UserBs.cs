@@ -73,29 +73,30 @@ namespace BilleCar.BLL
         //    else
        //         return false;
        // }
+       // public bool IsValidOnInsert(User user)
+       // {
+       //     return true;
+      //  }
         public bool IsValidOnInsert(User user)
         {
-            return true;
-        }
-        //public bool IsValidOnInsert(User usr)
-        //{
-         //   UserBs userObjBs = new UserBs();
-         //
-//
-         //   int count;
+            UserBs userObjBs = new UserBs();
+         
+
+            int count;
             //Unique Email Validation
-        //    string EmailValue = usr.Email.ToString();
-       //     count = userObjBs.GetAll().Where(x => x.Email == EmailValue).ToList().Count();
-        //    if (count != 0)
-       //     {
-        //        Errors.Add("Email Already Exist");
-       //     }
-//
-      //      if (Errors.Count() == 0)
-      //          return true;
-     //       else
-       //         return false;
-     //   }
+            string EmailValue = user.Email.ToString();
+            count = userObjBs.GetAll().Where(x => x.Email == EmailValue).ToList().Count();
+            if (count != 0)
+            {
+                Errors.Add("Istnieje już taki email");
+            }
+
+            if (Errors.Count() == 0)
+                return true;
+            else
+                return false;
+        }
+
         public bool IsValidOnUpdate(User user)
         {
             return true;
