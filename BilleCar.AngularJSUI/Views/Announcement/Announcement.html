@@ -23,10 +23,14 @@
                 Sortuj po Date
             </div>
         </div>
+        <md-card-content>
+            <div class="alert-success" id="alert" ng-show="Flg">
+                {{Msg}}
+            </div>
+        </md-card-content>
 
-
-        <div dir-paginate="an in anns | filter:search | orderBy:key:AscOrDesc | itemsPerPage: 3" flex="50" layout="column">
-            <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+        <div dir-paginate="an in Anns | filter:search | orderBy:key:AscOrDesc | itemsPerPage: 3" flex="50" layout="column">
+            <md-card>
 
                 <md-card-title>
                     <md-card-title-text>
@@ -40,6 +44,10 @@
                     </md-card-title-media>
                 </md-card-title>
                 <md-card-actions layout="row" layout-align="end center">
+                    <md-button ng-click="DeleteAnnouncementById(an)">
+                        Usuń
+                    </md-button>
+
                     <md-button>Edytuj</md-button>
                     <md-button>
                         <a href="#announcementDetail/{{ an.AnnouncementId }}">

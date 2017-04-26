@@ -25,7 +25,7 @@ namespace BilleCar.API.Controllers
         {
             return Ok(departmentObjBs.GetAll());
         }
-        [ResponseType(typeof(ICollection<Department>))]
+        [ResponseType(typeof(Department))]
         public IHttpActionResult Get(int id)
         {
             Department department = departmentObjBs.GetByID(id);
@@ -34,13 +34,24 @@ namespace BilleCar.API.Controllers
             else
                 return NotFound();
         }
-        [ResponseType(typeof(ICollection<Department>))]
+        [ResponseType(typeof(Department))]
         public IHttpActionResult Post(Department department)
         {
             if (ModelState.IsValid)
             {
-                departmentObjBs.Insert(department);
-                return CreatedAtRoute("DefaultApi", new { id = department.DepartmentId }, department);
+                if (departmentObjBs.Insert(department))
+                {
+                    return CreatedAtRoute("DefaultApi", new { id = department.DepartmentId }, department);
+
+                }
+                else
+                {
+                    foreach (var error in departmentObjBs.Errors)
+                    {
+                        ModelState.AddModelError("", error);
+                    }
+                    return BadRequest(ModelState);
+                }
             }
             else
             {
@@ -48,7 +59,7 @@ namespace BilleCar.API.Controllers
             }
         }
 
-        [ResponseType(typeof(ICollection<Department>))]
+        [ResponseType(typeof(Department))]
         public IHttpActionResult Put(int id, Department department)
         {
             if (ModelState.IsValid)
@@ -62,7 +73,7 @@ namespace BilleCar.API.Controllers
             }
         }
 
-        [ResponseType(typeof(ICollection<Department>))]
+        [ResponseType(typeof(Department))]
         public IHttpActionResult Delete(int id)
         {
             Department department = departmentObjBs.GetByID(id);

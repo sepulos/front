@@ -8,7 +8,8 @@
                 <md-card-title-text layout="column" flex="100">
                     <span class="top__title">Szczegóły ogłoszenia</span>
                     <span style="font-size: 24px;" class="md-subhead">Numer ogloszenia : {{ anns.AnnouncementId }}</span>
-                    <span style="font-size: 24px;" class="md-subhead">Autor ogloszenia : {{ anns.AutorRefUser }}</span>
+                    <span style="font-size: 24px;" class="md-subhead">Autor ogloszenia : {{ usrs.Name }} {{usrs.SurName}}</span>
+                    <span style="font-size: 24px;" class="md-subhead">Email autora : {{ anns.AutorRefUser }}</span>
                     <span style="font-size: 24px;" class="md-subhead">Numer oddziału : {{ anns.DepartmentRefId }}</span>
                     <span style="font-size: 24px;" class="md-subhead">Miejsce startowe : {{ anns.StartPlace }}</span>
                     <span style="font-size: 24px;" class="md-subhead">Będę jechał do : {{ anns.EndPlace }}</span>
@@ -29,12 +30,13 @@
 
     <md-content md-whiteframe="3" layout="row" >
         <div layout="column" flex="100">
-            <a href="#announcement">
-                <md-button>
-                    <md-icon>close</md-icon>
-                    <label style="margin-top: 10px;">wróć</label>
-                </md-button>
-            </a>
+                <md-button style="width: 80px; height: 50px; cursor: pointer;">
+                    <a href="#announcement">
+
+                        <md-icon>close</md-icon>
+                        <label style="margin-top: 10px;">wróć</label>
+                    </a>
+                 </md-button>
 
 
 

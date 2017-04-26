@@ -13,7 +13,16 @@ app.config(function ($routeProvider) {
 
 });
 
-app.config(function ($mdThemingProvider) {
+app.factory('utilityService', function () {
+    utilityObj = {};
+
+    utilityObj.myAlert = function () {
+        $('#alert').fadeTo(2000, 500).slideUp(1000, function () {
+            $('#alert').slideUp(1000);
+        });
+    };
+
+    return utilityObj;
 });
 
 app.controller('homeController', function ($scope, $mdSidenav ) {

@@ -8,50 +8,69 @@
 
 
 
-app.factory('announcementService', function ($http) {
+app.factory('announcementMgmtService', function ($http) {
     annObj = {};
+
     annObj.getAll = function () {
-        var anns;
-        anns = $http({ method: 'Get', url: 'http://localhost:57037/api/Announcement' }).
+        var Anns;
+        Anns = $http({ method: 'Get', url: 'http://localhost:57037/api/Announcement' }).
             then(function (response) {
                 return response.data;
             });
-        return anns;
+        return Anns;
+    };
+
+    annObj.deleteAnnouncementById = function (aid) {
+        var Anns;
+
+        Anns = $http({ method: 'Delete', url: 'http://localhost:57037/api/Announcement/', params: { id: aid } }).
+            then(function (response) {
+                return response.data;
+
+            });
+
+        return Anns;
     };
 
 
     return annObj;
 });
 
-app.factory('departmentService', function ($http) {
-    depObj = {};
-    depObj.getAll = function () {
-        var deps;
-        deps = $http({ method: 'Get', url: 'http://localhost:57037/api/Department' }).
-            then(function (response) {
-                return response.data;
-            });
-        return deps;
-    };
-    return depObj;
-});
-
-app.controller('announcementController', function ($scope, announcementService, departmentService) {
+app.controller('announcementController', function ($scope, announcementMgmtService, utilityService, $window) {
     $scope.msg = "Witaj mordo";
 
-    announcementService.getAll().then(function (result) {
-        $scope.anns = result;
+    announcementMgmtService.getAll().then(function (result) {
+        $scope.Anns = result;
     });
 
 
-    departmentService.getAll().then(function (result) {
-        $scope.deps = result;
-    });
+    $scope.DeleteAnnouncementById = function (Ann) {
+        if ($window.confirm("Czy chcesz usunąć ogłoszenie nr: " + Ann.AnnouncementId + "?")) {
+            announcementMgmtService.deleteAnnouncementById(Ann.AnnouncementId).then(function (result) {
+                if (result.ModelState == null) {
+                    $scope.Msg = "Usunąłeś właśnie ogłoszenie nr: " + result.AnnouncementId;
+                    $scope.Flg = true;
+                    utilityService.myAlert();
+
+                    announcementMgmtService.getAll().then(function (result) {
+                        $scope.Anns = result;
+                    });
+                }
+                else {
+                    $scope.serverErrorMsgs = result.ModelState;
+                }
+            });
+        }
+    };
+
+
+
+    /*funkcjonanosci*/
+
 
     $scope.Sort = function (col) {
         $scope.key = col;
         $scope.AsOrDesc = !$scope.AsOrDesc;
     };
-
 
 });

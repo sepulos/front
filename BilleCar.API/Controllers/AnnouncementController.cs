@@ -25,7 +25,7 @@ namespace BilleCar.API.Controllers
         {
             return Ok(announcementObjBs.GetAll());
         }
-        [ResponseType(typeof(ICollection<Announcement>))]
+        [ResponseType(typeof(Announcement))]
         public IHttpActionResult Get(int id)
         {
             Announcement announcement = announcementObjBs.GetByID(id);
@@ -35,13 +35,24 @@ namespace BilleCar.API.Controllers
                 return NotFound();
         }
 
-        [ResponseType(typeof(ICollection<Announcement>))]
+        [ResponseType(typeof(Announcement))]
         public IHttpActionResult Post(Announcement announcement)
         {
             if (ModelState.IsValid)
             {
-                announcementObjBs.Insert(announcement);
-                return CreatedAtRoute("DefaultApi", new { id = announcement.AnnouncementId }, announcement);
+                if (announcementObjBs.Insert(announcement))
+                {
+                    return CreatedAtRoute("DefaultApi", new { id = announcement.AnnouncementId }, announcement);
+
+                }
+                else
+                {
+                    foreach (var error in announcementObjBs.Errors)
+                    {
+                        ModelState.AddModelError("", error);
+                    }
+                    return BadRequest(ModelState);
+                }
             }
             else
             {
@@ -49,7 +60,7 @@ namespace BilleCar.API.Controllers
             }
         }
 
-        [ResponseType(typeof(ICollection<Announcement>))]
+        [ResponseType(typeof(Announcement))]
         public IHttpActionResult Put(int id, Announcement announcement)
         {
             if (ModelState.IsValid)
@@ -63,7 +74,7 @@ namespace BilleCar.API.Controllers
             }
         }
 
-        [ResponseType(typeof(ICollection<Announcement>))]
+        [ResponseType(typeof(Announcement))]
         public IHttpActionResult Delete(int id)
         {
             Announcement announcement = announcementObjBs.GetByID(id);

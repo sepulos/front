@@ -25,16 +25,16 @@ namespace BilleCar.API.Controllers
         {
             return Ok(userObjBs.GetAll());
         }
-        [ResponseType(typeof(ICollection<User>))]
+        [ResponseType(typeof(User))]
         public IHttpActionResult Get(string email)
         {
-            User user =userObjBs.GetByEmail(email);
+            User user = userObjBs.GetByEmail(email);
             if (user != null)
                 return Ok(user);
             else
                 return NotFound();
         }
-        [ResponseType(typeof(ICollection<User>))]
+        [ResponseType(typeof(User))]
         public IHttpActionResult Post(User user)
         {
             if (ModelState.IsValid)
@@ -58,7 +58,7 @@ namespace BilleCar.API.Controllers
             }
         }
 
-        [ResponseType(typeof(ICollection<Department>))]
+        [ResponseType(typeof(Department))]
         public IHttpActionResult Put(string email, User user)
         {
             if (ModelState.IsValid)
@@ -72,7 +72,7 @@ namespace BilleCar.API.Controllers
             }
         }
 
-        [ResponseType(typeof(ICollection<User>))]
+        [ResponseType(typeof(User))]
         public IHttpActionResult Delete(string email)
         {
             User user = userObjBs.GetByEmail(email);

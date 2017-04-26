@@ -19,7 +19,7 @@ namespace BilleCar.DAL
 
         public User GetByEmail(string email)
         {
-            return db.Users.Where(x => x.Email == email).FirstOrDefault();
+            return db.Users.Find(email);
         }
 
         public void Insert(User user)
@@ -27,10 +27,18 @@ namespace BilleCar.DAL
             db.Users.Add(user);
             Save();
         }
+        /*   public void Delete(string email)
+           {
+               User user = db.Users.Where(x => x.Email == email).FirstOrDefault();
+               db.Users.Remove(user);
+           }*/
+
+
         public void Delete(string email)
         {
-            User user = db.Users.Where(x => x.Email == email).FirstOrDefault();
+            User user = db.Users.Find(email);
             db.Users.Remove(user);
+            Save();
         }
         public void Update(User user)
         {

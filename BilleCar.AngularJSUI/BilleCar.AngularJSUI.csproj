@@ -168,6 +168,8 @@
     <Content Include="Views\Department\DepartmentMgmt\departmentMgmt.js" />
     <Content Include="Views\Department\DepartmentUpdate\DepartmentUpdate.html" />
     <Content Include="Views\Department\DepartmentUpdate\departmentUpdate.js" />
+    <Content Include="Views\UserList\UserList.html" />
+    <Content Include="Views\UserList\userList.js" />
     <Content Include="Web.config" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />

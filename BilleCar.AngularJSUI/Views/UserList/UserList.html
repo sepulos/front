@@ -1,0 +1,48 @@
+﻿<md-card layout="column" flex="100" layout-align="space-around">
+
+    <div class="well" layout="row" flex="100">
+        <input type="text" class="form-control" ng-model="search" placeholder="Wyszukaj" />
+    </div>
+    <md-card-content>
+        <div class="alert-success" id="alert" ng-show="Flg">
+            {{Msg}}
+        </div>
+    </md-card-content>
+
+    <md-card-content layout="row" flex="100">
+
+
+        <div class="panel panel-primary" style="width: 100%;">
+            <div class="panel-heading">
+                <h3 class="panel-title">Lista użySzkodników</h3>
+            </div>
+            <div class="panel-body">
+                <table class="table table-striped table-hover ">
+                    <thead>
+                        <tr>
+                            <th ng-click="Sort('Name')">Imię</th>
+                            <th ng-click="Sort('SurName')">Nazwisko</th>
+                            <th ng-click="Sort('Pass')">Hasło</th>
+                            <th ng-click="Sort('Email')">Email</th>
+                            <th ng-click="Sort('RoleId')">1.Admin/2.User</th>
+                            <th>Usuń</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="us in users | filter:search | orderBy:key:AscOrDesc">
+                            <td>{{us.Name}}</td>
+                            <td>{{us.SurName}}</td>
+                            <td>{{us.Pass}}</td>
+                            <td>{{us.Email}}</td>
+                            <td>{{us.RoleId}}</td>
+                            <td ng-click="DeleteUsersByEmail(us)" ><md-icon>close</md-icon></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+    </md-card-content>
+</md-card>

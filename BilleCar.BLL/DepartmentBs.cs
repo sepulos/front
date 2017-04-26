@@ -12,6 +12,8 @@ namespace BilleCar.BLL
     {
         private DepartmentDb objDb;
 
+        public List<string> Errors = new List<string>();
+
         public DepartmentBs()
         {
             objDb = new DepartmentDb();
@@ -33,7 +35,9 @@ namespace BilleCar.BLL
                 return true;
             }
             else
+            {
                 return false;
+            }
 
         }
         public void Delete(int Id)
@@ -53,7 +57,17 @@ namespace BilleCar.BLL
         }
         public bool IsValidOnInsert(Department department)
         {
-            return true;
+            string DepartmentNameValue = department.Name.ToString();
+            int count = GetAll().Where(x => x.Name == DepartmentNameValue).ToList().Count();
+            if (count != 0)
+            {
+                Errors.Add("Taka nazwa odziału już istnieje");
+            }
+
+            if (Errors.Count() == 0)
+                return true;
+            else
+                return false;
         }
         public bool IsValidOnUpdate(Department department)
         {

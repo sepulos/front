@@ -12,6 +12,8 @@ namespace BilleCar.BLL
     {
         private AnnouncementDb objDb;
 
+        public List<string> Errors = new List<string>();
+
         public AnnouncementBs()
         {
             objDb = new AnnouncementDb();

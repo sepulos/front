@@ -1,29 +1,88 @@
-﻿<div class="well">
-    <input type="text" class="form-control" ng-model="search" placeholder="Wyszukaj" />
-</div>
-<div class="panel panel-primary">
-    <div class="panel-heading">
-        <h3 class="panel-title">Lista oddziałów</h3>
-    </div>
-    <div class="panel-body">
+﻿<md-content layout="column" layout-align="space-around">
+    
+    <md-card>
+        <form name="createDepartmentForm" novalidate>
+            <md-card-content>
+                <span class="md-headline">Dodaj ogloszenie :</span>
+                <md-icon style="float: right; text-align: right;" class="przycisk" ng-click="zwin()">keyboard_arrow_down</md-icon>
+            </md-card-content>
+            <md-card-content>
+                <div  class="alert-success" id="alert" ng-show="Flg">
+                    {{Msg}}
+                </div>
+            </md-card-content>
+            <md-card-content class="zwin">
+                <md-input-container class="md-block" flex="100">
+                    <label>Nazwa oddziału</label>
+                    <input type="text" name="Name" ng-model="Dep.Name" required/>
+                    <ul>
+                        <li style="color: red;" ng-if="createDepartmentForm.$submitted && createDepartmentForm.Name.$error.required">Nazwa jest wymagana</li>
+                    </ul>
 
-        <table class="table table-striped table-hover ">
-            <thead>
-                <tr>
-                    <th ng-click="Sort('DepartmentId')">ID</th>
-                    <th ng-click="Sort('Name')">Nazwa</th>
-                    <th ng-click="Sort('Adress')">Adres</th>
-                    
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat="dp in deps | filter:search | orderBy:key:AscOrDesc">
-                    <td>{{dp.DepartmentId}}</td>
-                    <td>{{dp.Name}}</td>
-                    <td>{{dp.Adress}}</td>                   
-                </tr>
-                </tbody>
-            </table>
+                    <ul ng-repeat="item in serverErrorMsgs">
+                        <li style="color: red;">{{item[0]}}</li>
+                    </ul>
+                </md-input-container>
+                <md-input-container class="md-block" flex="100">
+                    <label>Adres oddziału</label>
+                    <input type="text"  name="Adress" ng-model="Dep.Adress" required/>
+                    <ul>
+                        <li style="color: red;" ng-if="createDepartmentForm.$submitted && createDepartmentForm.Adress.$error.required">Adres jest wymagany</li>
+                    </ul>
+                </md-input-container>
 
-    </div>
-</div>
+                <md-input-container class="md-block" flex="100">
+                    <label>Współrzędne oddziału</label>
+                    <input type="text"  name="slots" />
+
+                </md-input-container>
+
+                <div layout="row" flex="100">
+                    <iframe style="width: 100%; height: 100px; float: none;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d36305.00105684788!2d20.99020045743081!3d52.1887073737388!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc9b773b2197%3A0x6338f59562daf786!2sBillennium+-+Rozwi%C4%85zania+IT+dla+biznesu!5e0!3m2!1spl!2spl!4v1493138481526" frameborder="0" allowfullscreen></iframe>
+                </div>
+
+                <div style="float: right;" layout="row">
+                    <md-button type="submit" value="Create" ng-click="CreateDepartment(Dep, createDepartmentForm.$valid)">
+                        <md-icon>done</md-icon>
+                        Dodaj oddział
+                    </md-button>
+                </div>
+            </md-card-content>
+        </form>
+
+
+        <div class="well md-padding" >
+            <input type="text" class="form-control" ng-model="search" placeholder="Wyszukaj" />
+        </div>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Lista oddziałów</h3>
+            </div>
+            <div class="panel-body">
+                <table class="table table-striped table-hover ">
+                    <thead>
+                        <tr>
+                            <th ng-click="Sort('DepartmentId')">ID</th>
+                            <th ng-click="Sort('Name')">Nazwa</th>
+                            <th ng-click="Sort('Adress')">Adres</th>
+                            <th>Usuń</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="dp in Deps | filter:search | orderBy:key:AscOrDesc">
+                            <td>{{dp.DepartmentId}}</td>
+                            <td>{{dp.Name}}</td>
+                            <td>{{dp.Adress}}</td>
+                            <td ng-click="DeleteDepartmentById(dp)"><md-icon>close</md-icon></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+    </md-card>
+
+
+</md-content>
