@@ -46,7 +46,7 @@
 
 
 .top__title {
-    font-size: 60px;
+    font-size: 40px;
     font-weight: 700;
     padding: 40px 20px 20px 20px;
     font-family: 'Advent Pro', sans-serif;
@@ -269,6 +269,10 @@ th {
 
 .sort{
     padding-right: 15px;
+}
+
+.zwin{
+    display: none;
 }
 
 

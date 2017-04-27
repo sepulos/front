@@ -1,0 +1,120 @@
+﻿<div ng-show="Anns==null">
+<md-card class="md-whiteframe-z5" style="padding: 10px 20px;">
+    <h1>Ogłoszenie o tym numerze nie istnieje</h1>
+
+    <md-button style="width: 80px; height: 50px; cursor: pointer;">
+        <a href="#announcement">
+
+            <md-icon>close</md-icon>
+            wróć
+        </a>
+    </md-button>
+</md-card>
+</div>
+
+<form name="updateAnnouncementForm" novalidate ng-show="Anns!=null">
+    <div layout="column">
+
+        <md-content layout="row" class="md-padding">
+
+            <md-card flex="100">
+
+                <md-card-title layout="row">
+                    <md-card-title-text layout="column" flex="100">
+                        <span class="top__title">Szczegóły ogłoszenia</span>
+                        <div layout="row" flex="100">
+                            <md-input-container flex="100" layout="column">
+                                <label style="font-size: 20px;">Numer ogłoszenia</label>
+                                <input type="text" name="AnnouncementId" ng-model="Anns.AnnouncementId" ng-disabled="true" />
+                            </md-input-container>
+                        </div>
+                        <div layout="row" flex="100">
+                            <md-input-container flex="100" layout="column">
+                                <input type="text" name="Name" ng-model="usrs.Name" ng-disabled="true" />
+                                <label style="font-size: 20px;">Imię autora</label>
+
+                            </md-input-container>
+                        </div>
+                        <div layout="row" flex="100">
+                            <md-input-container flex="100" layout="column">
+                                <label style="font-size: 20px;">Email autora</label>
+                                <input type="text" name="AutorRefUser" ng-model="Anns.AutorRefUser" ng-disabled="true" />
+                            </md-input-container>
+                        </div>
+                        <div layout="row" flex="100">
+                            <md-input-container flex="100" layout="column">
+                                <label style="font-size: 20px;">Początek przejazdu</label>
+                                <input type="text" name="StartPlace" ng-model="Anns.StartPlace" required/>
+                                <ul>
+                                    <li style="color: red;" ng-if="updateAnnouncementForm.$submitted && updateAnnouncementForm.StartPlace.$error.required">Miejsce startowe jest wymagane</li>
+                                </ul>
+                            </md-input-container>
+                        </div>
+                        <div layout="row" flex="100">
+                            <md-input-container flex="100" layout="column">
+                                <label style="font-size: 20px;">Koniec Przejazdu</label>
+                                <input type="text" name="EndPlace" ng-model="Anns.EndPlace" required/>
+                                <ul>
+                                    <li style="color: red;" ng-if="updateAnnouncementForm.$submitted && updateAnnouncementForm.EndPlace.$error.required">Miejsce końcowe jest wymagane</li>
+                                </ul>
+                            </md-input-container>
+                        </div>
+                        <div layout="row" flex="100">
+                            <md-input-container flex="100" layout="column">
+                                <label style="font-size: 20px;">Ilość wolnych miejsc</label>
+                                <input type="text" name="FreeSlots" ng-model="Anns.FreeSlots" required/>
+                                <ul>
+                                    <li style="color: red;" ng-if="updateAnnouncementForm.$submitted && updateAnnouncementForm.FreeSlots.$error.required">Ilość wolnych miejsc jest wymagana</li>
+                                </ul>
+
+                            </md-input-container>
+                        </div>
+
+                    </md-card-title-text>
+                    <iframe style="height: 100%;" layout="column" flex="100" src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d18864.52285835237!2d20.460370288336375!3d53.770523824474324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x46e2792d071419c7%3A0x106a8126cf54c20f!2sOlsztyn!3m2!1d53.778422!2d20.4801193!4m5!1s0x46e27f375ab76763%3A0xf2ae572fd310f8fc!2sKortowo%2C+Olsztyn!3m2!1d53.755314999999996!2d20.4561325!5e0!3m2!1spl!2spl!4v1492019715231" frameborder="0" style="border:0" allowfullscreen></iframe>            <md-card-title>
+
+                    </md-card-title>
+
+
+
+            </md-card>
+            <md-content md-whiteframe="3" layout="row">
+                <div layout="column">
+                    <md-button style="width: 80px; height: 50px; cursor: pointer;">
+                        <a href="#announcement">
+
+                            <md-icon>close</md-icon>
+                            wróć
+                        </a>
+                    </md-button>
+
+
+
+
+                </div>
+                <div layout="column">
+                    <md-button type="submit" value="save" style="width: 80px; height: 50px; cursor: pointer;" ng-click="UpdateAnnouncement(Anns, updateAnnouncementForm.$valid)">
+
+                        <md-icon>add</md-icon>
+                        Zmień
+                    </md-button>
+
+
+
+
+                </div>
+                <ul ng-repeat="item in serverErrorMsgs">
+                    <li id="alert" style="color: red;">{{item[0]}}</li>
+                </ul>
+
+                <div style="color: green;" id="alert" layout="row" layout-aligin="space-around" ng-show="Flg">
+                                <span class="md-subhead">{{Msg}}</span>
+                </div>
+
+            </md-content>
+        </md-content>
+
+
+
+    </div>
+</form>

@@ -61,18 +61,29 @@ namespace BilleCar.API.Controllers
         }
 
         [ResponseType(typeof(Announcement))]
-        public IHttpActionResult Put(int id, Announcement announcement)
+        public IHttpActionResult Put(Announcement announcement)
         {
             if (ModelState.IsValid)
             {
-                announcementObjBs.Update(announcement);
-                return Ok(announcement);
+                if (announcementObjBs.Update(announcement))
+                {
+                    return Ok(announcement); //return CreatedAtRoute("DefaultApi", new { id = announcement.AnnouncementId }, announcement);
+
+                }
+                else
+                {
+                    foreach (var error in announcementObjBs.Errors)
+                    {
+                        ModelState.AddModelError("", error);
+                    }
+                    return BadRequest(ModelState);
+                }
             }
             else
             {
                 return BadRequest(ModelState);
             }
-        }
+    }
 
         [ResponseType(typeof(Announcement))]
         public IHttpActionResult Delete(int id)
