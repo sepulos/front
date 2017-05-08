@@ -1,6 +1,6 @@
 ﻿
     <div layout="row" layout-align="space-around">
-        <md-card flex="flex" flex-gt-sm="50" flex-gt-md="40">
+        <md-card flex="flex" flex-gt-sm="30" flex-gt-md="30">
             <img style="width: 100%; height: 150px;" class="md-card-image" alt="login" src="Views/Common/Login/img/login.jpg" />
             <md-card-title>
                 <md-card-title-text>
@@ -9,26 +9,26 @@
             </md-card-title>
 
             <md-card-content>
-                <form name="Form">
+                <form name="FormLogin" novalidate>
                     <md-input-container class="md-block">
                         <label>E-mail</label>
-                        <input type="text" name="email" ng-model="vm.formData.email" required />
-                        <div ng-messages="Form.email.$error" role="alert" multiple="">
-                            <div ng-message="required" class="my-message">Podaj swój email</div>
-                        </div>
+                        <input type="text" ng-model="Usr.Email" name="Email" id="inputEmail" required />
+                        <ul>
+                            <li style="color: red;" ng-if="FormLogin.$submitted && FormLogin.Email.$error.required">Imię jest wymagane</li>
+                        </ul>
                     </md-input-container>
 
                     <md-input-container class="md-block">
                         <label>Hasło</label>
-                        <input type="text" name="passwd" ng-model="" required="" />
-                        <div ng-messages="Form.passwd.$error" role="alert" multiple="">
-                            <div ng-message="required" class="my-message">Podaj swoje hasło</div>
-                        </div>
+                        <input type="password" ng-model="Usr.Pass" name="Pass" ng-pattern="re" class="form-control" id="inputPassword" required />
+                        <ul>
+                            <li style="color: red;" ng-if="FormLogin.$submitted && FormLogin.Pass.$error.required">Imię jest wymagane</li>
+                        </ul>
                     </md-input-container>
 
-                    <md-button layout="row">
+                    <md-button layout="row" type="submit" ng-click="Login(Usr,loginForm.$valid)" value="SignIn">
                         <md-icon>done</md-icon>
-                        <label style="margin: 5px 0 0 10px;">Zaloguj się</label>
+                        Zaloguj się
                     </md-button>
 
                     <label  style="width: 100%; text-align: right;">

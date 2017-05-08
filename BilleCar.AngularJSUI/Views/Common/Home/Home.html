@@ -1,94 +1,220 @@
 ﻿<div layout="row">
 
-    <md-card flex-xs flex-gt-xs="30">
-        <img style="width: 100%; height: 150px;" src="Views/Common/Home/src/home.jpg" class="md-card-image" alt="Washed Out">
+    <md-card flex-xs flex-gt-xs="30" class="md-whiteframe-z3">
         <md-card-title>
             <md-card-title-text>
-                <span class="md-headline">Dodaj nowe ogłoszenie</span>
+                <span class="md-headline">Dodaj godziny</span>
             </md-card-title-text>
         </md-card-title>
         <md-card-content>
-            <p>
-                Jedziesz samochodem? Powiedz nam kiedy się wybierasz, a znajdziemy Ci kogoś fajnego
-            </p>
+
+            <form name="Form">
+                <div layout="row">
+
+                    <md-input-container class="md-block" flex="100">
+                        <md-datepicker ng-model="Anns.Data" md-placeholder="Podaj date" md-open-on-focus></md-datepicker>
+                    </md-input-container>
+
+
+
+                </div>
+                <div layout="row">
+
+
+                    <md-input-container class="" flex="100">
+                        <div>
+                            <div style="width: 100%;">Zacząłem pracę o :</div>
+                            <input type="time" style="width: 100px;" />
+                        </div>
+                    </md-input-container>
+
+                    <md-input-container class="" flex="100">
+                        <div>
+                            <div style="width: 100%;">Skończyłem pracę o :</div>
+                            <input type="time" style="width: 100px;"/>
+                        </div>
+                    </md-input-container>
+
+
+                </div>
+
+                <div layout="row">
+
+
+
+                    <md-input-container flex="100">
+                        <label>Aktualnie pracuje</label>
+                        <md-select name="type" ng-model="Anns.Data" required>
+                            <md-option value="zdalnie">Zdalnie</md-option>
+                            <md-option value="biuro">Biuro</md-option>
+                        </md-select>
+                    </md-input-container>
+
+                </div>
+
+
+                <div style="float: right;" layout="row">
+                    <md-button style="margin-top: 15px;" type="submit" value="Create" ng-click="">
+                        <md-icon>done</md-icon>
+                        <label>Dodaj godziny</label>
+
+                    </md-button>
+
+                    <a class="nav__item" href="#home">
+                        <md-button>
+                            <md-icon>clear</md-icon>
+                            <label class="create__clear">Anuluj</label>
+
+                        </md-button>
+                    </a>
+                </div>
+
+
+            </form>
+
         </md-card-content>
-        <md-card-actions layout="row" layout-align="end center">
-            <a href="#create">
-                <md-button class="md-icon-button" aria-label="add_circle_outline">
-                    <md-icon>add_circle_outline</md-icon>
-                </md-button>
-            </a>
-        </md-card-actions>
     </md-card>
 
 
-    <md-card flex-xs flex-gt-xs="30">
-        <img style="width: 100%; height: 150px;" src="Views/Common/Home/src/billennium.png" class="md-card-image" alt="Washed Out">
+    <md-card flex-xs flex-gt-xs="30" class="md-whiteframe-z3">
         <md-card-title>
             <md-card-title-text>
-                <span class="md-headline">Najnowsze ogłoszenia</span>
+                <span class="md-headline">Podanie o urlop</span>
             </md-card-title-text>
         </md-card-title>
         <md-card-content>
-            <p>
-                Przejdź do ogłoszeń dodanych ostatnio w serwisie
-            </p>
+            <form>
+
+
+                <div layout="row" flex="100">
+
+                    <md-input-container class="md-block" flex="50">
+                        <label> Urlop od</label>
+
+                        <md-datepicker ng-model="Anns.Datae" md-open-on-focus></md-datepicker>
+                    </md-input-container>
+
+
+                </div>
+
+
+                <div layout="row" flex="100">
+
+
+                    <md-input-container class="md-block" flex="50">
+                        <label> Urlop do</label>
+                        <md-datepicker ng-model="Anns.Dataa" md-open-on-focus></md-datepicker>
+                    </md-input-container>
+
+
+
+                </div>
+
+
+                <div layout="row">
+                    <md-input-container flex="100">
+                        <label>Podanie o urlop motywuję</label>
+                        <input style="width: 100%;" ng-model="Anns.Text" required />
+                    </md-input-container>
+                </div>
+
+                <div style="float: right;" layout="row">
+                    <md-button style="margin-top: 15px;" type="submit" value="Create" ng-click="">
+                        <md-icon>done</md-icon>
+                        <label>Wyślij</label>
+                    </md-button>
+
+                    <a class="nav__item" href="#home">
+                        <md-button>
+                            <md-icon>clear</md-icon>
+                            <label class="create__clear">Anuluj</label>
+                        </md-button>
+                    </a>
+                </div>
+
+            </form>
+
         </md-card-content>
-        <md-card-actions layout="row" layout-align="end center">
-            <a href="#announcement">
-                <md-button class="md-icon-button" aria-label="Favorite">
-                    <md-icon><i class="material-icons">subdirectory_arrow_right</i></md-icon>
-                </md-button>
-            </a>
-        </md-card-actions>
+
     </md-card>
 
 
 
-    <md-card flex-xs flex-gt-xs="30">
-        <img style="width: 100%; height: 150px;" src="Views/Common/Home/src/road.jpg" class="md-card-image" alt="Washed Out">
+    <md-card flex-xs flex-gt-xs="30" class="md-whiteframe-z3">
         <md-card-title>
             <md-card-title-text>
-                <span class="md-headline">Twoje ogłoszenia</span>
+                <span class="md-headline">Twoje aktywności</span>
             </md-card-title-text>
         </md-card-title>
         <md-card-content>
-            <p>
-                Chcesz coś zmienić w swoim ogłoszeniu ?
-            </p>
-        </md-card-content>
-        <md-card-actions layout="row" layout-align="end center">
-            <a href="#announcement">
-                <md-button class="md-icon-button" aria-label="Favorite">
-                    <md-icon>border_color</md-icon>
-                </md-button>
-                </a>
 
-</md-card-actions>
+            <table class="table">
+                <thead>
+                    <tr>
+                    <th>Dzień</th>
+                    <th>Praca od</th>
+                    <th>Praca do</th>
+                    <th>Razem</th>
+                   </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>26.04.2017</td>
+                        <td>7:00</td>
+                        <td>17:00</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>22.04.2017</td>
+                        <td>9:00</td>
+                        <td>17:00</td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td>20.04.2017</td>
+                        <td>10:00</td>
+                        <td>17:00</td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td>18.04.2017</td>
+                        <td>9:00</td>
+                        <td>17:00</td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td>17.04.2017</td>
+                        <td>10:00</td>
+                        <td>17:00</td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td>16.04.2017</td>
+                        <td>7:00</td>
+                        <td>17:00</td>
+                        <td>10</td>
+                    </tr>
+                </tbody>
+            </table>
+          
+        </md-card-content>
+
     </md-card>
 
 </div>
 
 <div layout="row">
 
-    <md-card flex-xs flex-gt-xs="30">
-        <img style="width: 100%; height: 150px;" src="Views/Common/Home/src/login.jpg" class="md-card-image" alt="Washed Out">
+    <md-card flex-xs flex-gt-xs="30" class="md-whiteframe-z3">
         <md-card-title>
             <md-card-title-text>
-                <span class="md-headline">Twój profil</span>
+                <span class="md-headline">Wyszukiwarka</span>
             </md-card-title-text>
         </md-card-title>
-        <md-card-content>
-            <p>
-               Zmieniłeś stan cywilny, email, imię, planujesz imprezę ?
-            </p>
-        </md-card-content>
-        <md-card-actions layout="row" layout-align="end center">
-            <md-button class="md-icon-button" aria-label="Favorite">
-                <md-icon><i class="material-icons">assignment_ind</i></md-icon>
-            </md-button>
 
-        </md-card-actions>
+        <div style="margin: 20px;" layout="row" flex="100">
+            <input type="text" class="form-control" ng-model="search" placeholder="Wyszukaj" />
+        </div>
     </md-card>
 
 

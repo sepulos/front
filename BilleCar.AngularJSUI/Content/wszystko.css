@@ -1,6 +1,5 @@
 ﻿body {
    /* max-width: 1200px;*/
-    font-family: 'Advent Pro', sans-serif;
     position: relative;
 }
 
@@ -49,7 +48,6 @@
     font-size: 40px;
     font-weight: 700;
     padding: 40px 20px 20px 20px;
-    font-family: 'Advent Pro', sans-serif;
     position: relative;
 }
 
@@ -279,5 +277,4 @@ th {
 
 
 /* CUSTOM    */
-
 

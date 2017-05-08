@@ -70,7 +70,7 @@ app.controller('announcementUpdateController', function ($scope, $routeParams, a
         if (IsValid) {
             announcementUpdateService.updateAnnouncement(Anns).then(function (result) {
                 if (result.ModelState == null) {
-                    $scope.Msg = "Udało Ci się zaktualizować ogłoszenie nr:" + result.AnnouncementId;
+                    $scope.Msg = "Udało Ci się zaktualizować ogłoszenie nr : " + result.AnnouncementId;
                     $scope.Flg = true;
                     $scope.serverErrorMsgs = "";
                     utilityService.myAlert();

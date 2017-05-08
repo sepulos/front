@@ -76,4 +76,9 @@ app.controller('userListController', function ($scope, $http, userListService, u
         $scope.AsOrDesc = !$scope.AsOrDesc;
     };
 
+
+    $scope.zwin = function () {
+        $('.zwin').slideToggle(1);
+    };
+
 });

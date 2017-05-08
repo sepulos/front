@@ -19,7 +19,7 @@ namespace BilleCar.DAL
 
         public User GetByEmail(string email)
         {
-            return db.Users.Find(email);
+            return db.Users.Where(x => x.Email == email).FirstOrDefault();
         }
 
         public void Insert(User user)

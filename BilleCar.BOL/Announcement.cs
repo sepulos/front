@@ -13,6 +13,8 @@ namespace BilleCar.BOL
         public Announcement()
         {
             StartDate = DateTime.Now;
+            DepartmentRefId = 1;
+            AutorRefUser = "admin@o2.pl";
         }
 
         [Key]

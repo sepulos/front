@@ -1,0 +1,121 @@
+﻿
+.tabela {
+    text-align: center;
+}
+
+
+md-list-item {
+    position: relative;
+    height: 40px;
+}
+
+.employee__box{
+    position: relative;
+}
+
+
+
+.employee__dot {
+    background: green;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    float: left;
+    margin: 18px 10px 0 0;
+
+    
+}
+
+.employee__login {
+    padding-left: 20px;
+    float: left;
+    position: absolute;
+    top: 170px;
+    right: 15px;
+}
+
+.employee__status{
+    float: right;
+    font-size: 12px;
+}
+
+md-list-item:hover .employee__btn{
+    visibility: visible;
+}
+
+.employee__btn{
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    visibility: hidden;
+}
+
+.employee__header {
+    color: #388E3C;
+    font-size: 20px;
+    background: white;
+    height: 35px;
+}
+
+.employee__a{
+    color: black;
+}
+
+.employee__avatar {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 3px dotted #4CAF50;
+    padding: 2px;
+}
+
+.employee__fa {
+    font-size: 20px;
+    padding-right: 8px;
+    padding-top: 4px;
+}
+
+.employee__trig {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 80px 80px 0;
+    border-color: transparent #4CAF50 transparent transparent;
+    opacity: 0.6;
+}
+
+.md-active {
+    color: #4CAF50;
+}
+
+
+
+/*custom table*/
+
+
+.table{
+    margin-top: 10px;
+}
+
+th {
+    color: black;
+    background: #4CAF50;
+    opacity: 0.7;
+}
+
+.table > thead > tr > th {
+    border-bottom: 2px solid black;
+}
+
+th, tr, td{
+    border: 1px solid black;
+}
+
+tr:nth-child(even) {
+    background: #C8E6C9;
+}

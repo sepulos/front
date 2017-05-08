@@ -21,11 +21,11 @@
 
 <div id="create" ng-hide="Flg2">
     <div layout="row" layout-align="space-around">
-        <md-card flex="flex" flex-gt-sm="80" flex-gt-md="80">
-            <iframe style="width:100%;" src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d18864.52285835237!2d20.460370288336375!3d53.770523824474324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x46e2792d071419c7%3A0x106a8126cf54c20f!2sOlsztyn!3m2!1d53.778422!2d20.4801193!4m5!1s0x46e27f375ab76763%3A0xf2ae572fd310f8fc!2sKortowo%2C+Olsztyn!3m2!1d53.755314999999996!2d20.4561325!5e0!3m2!1spl!2spl!4v1492019715231" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <md-card flex="flex" flex-gt-sm="80" flex-gt-md="40">
+            <img style="width: 100%; height: 250px;" src="Views/AnnouncementCreate/src/time.jpg" class="md-card-image" alt="Washed Out">
             <md-card-title>
                 <md-card-title-text>
-                    <span class="md-headline">Dodaj nowe ogłoszenie</span>
+                    <span class="md-headline">Dodaj godziny pracy</span>
                 </md-card-title-text>
             </md-card-title>
 
@@ -37,79 +37,49 @@
                             <md-datepicker ng-model="Anns.Data" md-placeholder="Podaj date" md-open-on-focus></md-datepicker>
                         </md-input-container>
 
+         
+
+                    </div>
+                    <div layout="row">
+
+
                         <md-input-container class="" flex="100">
                             <div>
-                                <input type="time" placeholder="Podaj godzinę" />
+                                Zacząłem pracę o :
+                                <input type="time" />
+                            </div>
+                        </md-input-container>
+
+                        <md-input-container class="" flex="100">
+                            <div>
+                                Skończyłem pracę o :
+                                <input type="time" />
                             </div>
                         </md-input-container>
 
 
-                        <md-input-container class="md-block" flex="100">
-                            <label>Ilość miejsc</label>
-                            <input type="text" ng-model="Anns.FreeSlots" name="slots"   />
-
-                        </md-input-container>
-
                     </div>
-
-                     <div layout="row">
-
-                        <md-input-conteiner class="md-block" flex="100">
-
-                            <md-select  placeholder="Adres początkowy" ng-model="Anns.StartPlace">
-                                <md-option ng-repeat="dp in deps" value="{{dp.Name}}">
-                                    {{dp.Name}}
-                                </md-option>
-                            </md-select>
-                        </md-input-conteiner>
-
-
-                        <md-input-container class="" flex="100">
-                            <md-icon class="create__btn" style="font-size: 40px;">crop_rotate</md-icon>
-                        </md-input-container>
-
-
-                        <md-input-container class="md-block" flex="100">
-                            <label>Adres końcowy</label>
-                            <input type="text" name="koniec" ng-model="Anns.EndPlace"  />
-
-                        </md-input-container>
-
-                    </div>
-
-
                     <div layout="row">
 
 
-                        <md-input-container class="md-block" flex="100">
-                            <label>punkty pośrednie</label>
-                            <input type="text" name="place"  />
 
-                        </md-input-container>
-
-                        <md-input-conteiner class="md-block" flex="100">
-
-                            <md-select placeholder="Wybierz oddział" ng-model="Anns.DepartmentRefId">
-                                <md-option ng-repeat="dp in deps" value="{{dp.DepartmentId}}">
-                                    {{dp.Name}}
-                                </md-option>
+                        <md-input-container flex="100">
+                            <label>Aktualnie pracuje</label>
+                            <md-select name="type" ng-model="Anns.Data" required>
+                                <md-option value="zdalnie">Zdalnie</md-option>
+                                <md-option value="biuro">Biuro</md-option>
                             </md-select>
-                        </md-input-conteiner>
+                        </md-input-container>
 
                     </div>
 
-                    <md-input-container class="md-block" flex="100">
-                        <label>Email/Uwagi</label>
-                        <textarea ng-model="Anns.AutorRefUser" md-maxlength="150" rows="3" md-select-on-focus></textarea>
-
-                    </md-input-container>
 
                    
 
                     <div style="float: right;" layout="row">
-                            <md-button type="submit" value="Create" ng-click="CreateAnns(Anns)">
+                            <md-button type="submit" value="Create" ng-click="">
                                 <md-icon>done</md-icon>
-                                <label style="margin: 5px 0 0 10px;">Dodaj ogłoszenie</label>
+                                <label style="margin: 5px 0 0 10px;">Dodaj godziny</label>
                             </md-button>
 
                         <a class="nav__item" href="#home">

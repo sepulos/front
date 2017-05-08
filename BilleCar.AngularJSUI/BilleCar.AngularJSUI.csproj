@@ -74,6 +74,7 @@
     <Content Include="Content\angular-material.min.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\palette.css" />
     <Content Include="Content\wszystko.css" />
     <Content Include="fonts\bootstrap.min.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -170,6 +171,9 @@
     <Content Include="Views\Department\DepartmentMgmt\departmentMgmt.js" />
     <Content Include="Views\Department\DepartmentUpdate\DepartmentUpdate.html" />
     <Content Include="Views\Department\DepartmentUpdate\departmentUpdate.js" />
+    <Content Include="Views\Employee\employee.css" />
+    <Content Include="Views\Employee\Employee.html" />
+    <Content Include="Views\Employee\employee.js" />
     <Content Include="Views\UserList\UserList.html" />
     <Content Include="Views\UserList\userList.js" />
     <Content Include="Web.config" />
